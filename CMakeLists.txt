@@ -21,6 +21,10 @@ if (COMMAND cmake_policy)
         cmake_policy (SET CMP0042 NEW)
     endif ()
 endif ()
+
+
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin)
+
 # Set CMake modules search path
 set (CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/CMake/Modules)
 # Include Urho3D Cmake common module
@@ -29,8 +33,10 @@ include (Urho3D-CMake-common)
 find_package (Urho3D REQUIRED)
 include_directories (${URHO3D_INCLUDE_DIRS})
 include_directories (include)
+
 # Define target name
 set (TARGET_NAME Engine3D)
+
 # Define source files
 file (GLOB CPP_FILES src/*.cpp)
 file (GLOB H_FILES include/*.h)
