@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\build\CMakeFiles\513ebfeb0d18ecfe4d028547ce6b0ed4\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{1EE50958-70EE-3F48-833F-9F8A9CDE3890}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

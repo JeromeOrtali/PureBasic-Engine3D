@@ -11,6 +11,10 @@ PB_EventHandler::PB_EventHandler(Urho3D::Context* context) : Urho3D::Object(cont
 	SubscribeToEvent(Urho3D::E_MOUSEMOVE, URHO3D_HANDLER(PB_EventHandler, ev_MouseMove));
 	SubscribeToEvent(Urho3D::E_MOUSEWHEEL, URHO3D_HANDLER(PB_EventHandler, ev_MouseWheel));
 
+	SubscribeToEvent(Urho3D::E_RESOURCEBACKGROUNDLOADED, URHO3D_HANDLER(PB_EventHandler, ev_BackgroundLoadResource));
+
+	SubscribeToEvent(Urho3D::E_FILECHANGED, URHO3D_HANDLER(PB_EventHandler, ev_ResourceFileChange));
+
 	attachObserver(this);
 
 }
@@ -111,6 +115,37 @@ void PB_EventHandler::ev_MouseWheel(Urho3D::StringHash eventType, Urho3D::Varian
 
 	PB_EVENT->push(event);
 }
+
+///////////////////////////////////////////////////////////////////////////////
+//
+///////////////////////////////////////////////////////////////////////////////
+void PB_EventHandler::ev_BackgroundLoadResource(Urho3D::StringHash eventType, Urho3D::VariantMap& eventData) {
+	Event event;
+	event.type = backgroundResourceLoaded;
+	event.resourceLoaded.name		= (wchar_t*)Urho3D::WString( eventData[Urho3D::ResourceBackgroundLoaded::P_RESOURCENAME].GetString() ).CString();
+	event.resourceLoaded.success	= (int)						 eventData[Urho3D::ResourceBackgroundLoaded::P_SUCCESS].GetBool();
+	event.resourceLoaded.resource	= (void*)					 eventData[Urho3D::ResourceBackgroundLoaded::P_RESOURCE].GetPtr();
+
+	notifyObservers((int)event.type, &event, sizeof(Event));
+
+	PB_EVENT->push(event);
+}	
+
+///////////////////////////////////////////////////////////////////////////////
+//
+///////////////////////////////////////////////////////////////////////////////
+void PB_EventHandler::ev_ResourceFileChange(Urho3D::StringHash eventType, Urho3D::VariantMap& eventData) {
+	Event event;
+	event.type = resourceFileChange;
+	event.resourceFileChange.resourceName = (wchar_t*)Urho3D::WString(eventData[Urho3D::FileChanged::P_RESOURCENAME].GetString()).CString();
+	event.resourceFileChange.fileName     = (wchar_t*)Urho3D::WString(eventData[Urho3D::FileChanged::P_FILENAME].GetString()).CString();
+
+	notifyObservers((int)event.type, &event, sizeof(Event));
+
+	PB_EVENT->push(event);
+}
+
+
 
 ///////////////////////////////////////////////////////////////////////////////
 //

@@ -1,0 +1,44 @@
+Performing C++ SOURCE FILE Test COMPILER_HAS_DEPRECATED_ATTR failed with the following output:
+Change Dir: C:/Users/Jerome/Desktop/pb3d/PureBasic-Engine3D/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_2562d.vcxproj" "/p:Configuration=Release" "/p:VisualStudioVersion=15.0"
+Microsoft (R) Build Engine, version 15.1.1012.6693
+Copyright (C) Microsoft Corporation. Tous droits r‚serv‚s.
+
+La g‚n‚ration a d‚marr‚ 18/06/2017 13:13:35.
+Projet "C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\build\CMakeFiles\CMakeTmp\cmTC_2562d.vcxproj" sur le noud 1 (cibles par d‚faut).
+PrepareForBuild:
+  Cr‚ation du r‚pertoire "cmTC_2562d.dir\Release\".
+  Cr‚ation du r‚pertoire "C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\build\CMakeFiles\CMakeTmp\Release\".
+  Cr‚ation du r‚pertoire "cmTC_2562d.dir\Release\cmTC_2562d.tlog\".
+InitializeBuildStatus:
+  Cr‚ation de "cmTC_2562d.dir\Release\cmTC_2562d.tlog\unsuccessfulbuild", car "AlwaysCreate" a ‚t‚ sp‚cifi‚.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.10.25017\bin\HostX86\x86\CL.exe /c /W3 /WX- /diagnostics:classic /O2 /Ob2 /Oy- /D WIN32 /D _WINDOWS /D COMPILER_HAS_DEPRECATED_ATTR /D NDEBUG /D "CMAKE_INTDIR=\"Release\"" /D _MBCS /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_2562d.dir\Release\\" /Fd"cmTC_2562d.dir\Release\vc141.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\build\CMakeFiles\CMakeTmp\src.cxx"
+  Compilateur d'optimisation Microsoft (R) C/C++ versionÿ19.10.25019 pour x86
+  Copyright (C) Microsoft Corporation. Tous droits r‚serv‚s.
+  
+  cl /c /W3 /WX- /diagnostics:classic /O2 /Ob2 /Oy- /D WIN32 /D _WINDOWS /D COMPILER_HAS_DEPRECATED_ATTR /D NDEBUG /D "CMAKE_INTDIR=\"Release\"" /D _MBCS /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_2562d.dir\Release\\" /Fd"cmTC_2562d.dir\Release\vc141.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\build\CMakeFiles\CMakeTmp\src.cxx"
+  src.cxx
+  
+C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\build\CMakeFiles\CMakeTmp\src.cxx(1): error C2065: '__deprecated__'ÿ: identificateur non d‚clar‚ [C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\build\CMakeFiles\CMakeTmp\cmTC_2562d.vcxproj]
+C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\build\CMakeFiles\CMakeTmp\src.cxx(1): error C4430: sp‚cificateur de type manquant - int est pris en compte par d‚faut. Remarqueÿ: C++ ne prend pas en charge int par d‚faut [C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\build\CMakeFiles\CMakeTmp\cmTC_2562d.vcxproj]
+C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\build\CMakeFiles\CMakeTmp\src.cxx(1): error C2448: '__attribute__'ÿ: l'initialiseur de style fonction semble ˆtre une d‚finition de fonction [C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\build\CMakeFiles\CMakeTmp\cmTC_2562d.vcxproj]
+G‚n‚ration du projet "C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\build\CMakeFiles\CMakeTmp\cmTC_2562d.vcxproj" termin‚e (cibles par d‚faut) -- CHEC.
+
+CHEC de la build.
+
+"C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\build\CMakeFiles\CMakeTmp\cmTC_2562d.vcxproj" (cible par d‚faut) (1) ->
+(ClCompile cible) -> 
+  C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\build\CMakeFiles\CMakeTmp\src.cxx(1): error C2065: '__deprecated__'ÿ: identificateur non d‚clar‚ [C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\build\CMakeFiles\CMakeTmp\cmTC_2562d.vcxproj]
+  C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\build\CMakeFiles\CMakeTmp\src.cxx(1): error C4430: sp‚cificateur de type manquant - int est pris en compte par d‚faut. Remarqueÿ: C++ ne prend pas en charge int par d‚faut [C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\build\CMakeFiles\CMakeTmp\cmTC_2562d.vcxproj]
+  C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\build\CMakeFiles\CMakeTmp\src.cxx(1): error C2448: '__attribute__'ÿ: l'initialiseur de style fonction semble ˆtre une d‚finition de fonction [C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\build\CMakeFiles\CMakeTmp\cmTC_2562d.vcxproj]
+
+    0 Avertissement(s)
+    3 Erreur(s)
+
+Temps ‚coul‚ 00:00:00.27
+
+Source file was:
+__attribute__((__deprecated__)) int somefunc() { return 0; }
+    int main() { return somefunc();}

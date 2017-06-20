@@ -29,6 +29,9 @@ IMPORT_FUNCTION(PB_EnginePoolEvent, void, *event)
 IMPORT_FUNCTION(PB_BindEvent, void, type.l _ *callback)
 IMPORT_FUNCTION(PB_UnBindEvent, void, type.l _ *callback)
 
+IMPORT_FUNCTION(PB_getResource, .i, type.l _ name.s)
+IMPORT_FUNCTION(PB_backgroundLoadResource, .l, type.l _ name.s)
+
 
 IncludeFile "Event.pbi"
 
@@ -42,25 +45,45 @@ IncludeFile "Event.pbi"
 ;   
 ; Wend
 
-ProcedureC foo(*ev.Event)
-Debug *ev\mousemove\dx
+ProcedureC fileChange(*ev.Event)
+  Debug ">"
+  Debug PeekS(*ev\resourceFileChanged\fileName)
+  Debug PeekS(*ev\resourceFileChanged\resourceName)
+  Debug ""
 EndProcedure
 
+ProcedureC backgroundLoad(*ev.Event)
+  Debug "load:"
+  Debug PeekS(*ev\backgroundResourceLoaded\name)
+  Debug *ev\backgroundResourceLoaded\success
+  Debug *ev\backgroundResourceLoaded\resource
+  Debug ""
+  
+  
+EndProcedure
+
+PB_InitEngine3D(#Null , #Null)
+
+
+PB_BindEvent(#Event_ResourceFileChanged,@fileChange()) 
+PB_BindEvent(#Event_BackgroundResourceLoaded,@backgroundLoad()) 
 
 
 
-PB_InitEngine3D(#Null,#Null)
-
-
-PB_BindEvent(#Event_MouseMove,@foo()) 
-
- PB_OpenScreen3D(640,780,0,"test",1)
+ PB_OpenScreen3D(640,780,0, "You suck !" ,1)
 ;  OpenWindow(0,0,0,800,600,"")
 ;  ContainerGadget(0,50,50,256,256)
 ;  PB_EmbedScreen(GadgetID(0))
 
 ;   PB_OpenScreen3D(640,780,0,"test",1)
+ 
+Debug PB_backgroundLoadResource(7,"Fonts/Anonymous Pro.ttf")
+Debug PB_backgroundLoadResource(7,"Fonts/BlueHighddway.ttf")
+Debug PB_backgroundLoadResource(8,"Textures/TerrainWddeights.dds")
 
+
+ 
+ 
 While PB_EngineRun()
   
   ev.Event
@@ -109,9 +132,9 @@ Wend
 ;    
 
 ; IDE Options = PureBasic 5.60 (Windows - x86)
-; CursorPosition = 80
-; FirstLine = 42
-; Folding = -
+; CursorPosition = 81
+; FirstLine = 48
+; Folding = --
 ; EnableXP
 ; Executable = Test.exe
 ; SubSystem = opengl

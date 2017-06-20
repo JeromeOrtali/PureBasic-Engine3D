@@ -1,0 +1,270 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|Win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGUID>{828B8CAA-CAFE-3BEB-8612-63348CCAEDAE}</ProjectGUID>
+    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>Engine3D</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\build\bin\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Engine3D.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Engine3D</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\build\bin\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Engine3D.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Engine3D</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\build\bin\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Engine3D.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Engine3D</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Program Files (x86)\Urho3D\include;C:\Program Files (x86)\Urho3D\include\Urho3D\ThirdParty;C:\Program Files (x86)\Urho3D\include\Urho3D\ThirdParty\Bullet;C:\Program Files (x86)\Urho3D\include\Urho3D\ThirdParty\Lua;C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Release/</AssemblerListingLocation>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_SECURE_SCL=0;_HAS_ITERATOR_DEBUGGING=0;URHO3D_PROFILING;URHO3D_LOGGING;URHO3D_THREADING;GLEW_STATIC;GLEW_NO_GLU;URHO3D_ANGELSCRIPT;URHO3D_LUA;TOLUA_RELEASE;URHO3D_NAVIGATION;URHO3D_NETWORK;URHO3D_PHYSICS;URHO3D_URHO2D;URHO3D_CXX11;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR="Release";Engine3D_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_SECURE_SCL=0;_HAS_ITERATOR_DEBUGGING=0;URHO3D_PROFILING;URHO3D_LOGGING;URHO3D_THREADING;GLEW_STATIC;GLEW_NO_GLU;URHO3D_ANGELSCRIPT;URHO3D_LUA;TOLUA_RELEASE;URHO3D_NAVIGATION;URHO3D_NETWORK;URHO3D_PHYSICS;URHO3D_URHO2D;URHO3D_CXX11;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR=\"Release\";Engine3D_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Program Files (x86)\Urho3D\include;C:\Program Files (x86)\Urho3D\include\Urho3D\ThirdParty;C:\Program Files (x86)\Urho3D\include\Urho3D\ThirdParty\Bullet;C:\Program Files (x86)\Urho3D\include\Urho3D\ThirdParty\Lua;C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Program Files (x86)\Urho3D\include;C:\Program Files (x86)\Urho3D\include\Urho3D\ThirdParty;C:\Program Files (x86)\Urho3D\include\Urho3D\ThirdParty\Bullet;C:\Program Files (x86)\Urho3D\include\Urho3D\ThirdParty\Lua;C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions>%(AdditionalOptions)  /machine:X86</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;C:\Program Files (x86)\Urho3D\lib\Urho3D.lib;winmm.lib;imm32.lib;version.lib;ws2_32.lib;opengl32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>No</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/Jerome/Desktop/pb3d/PureBasic-Engine3D/build/Release/Engine3D.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/Jerome/Desktop/pb3d/PureBasic-Engine3D/build/bin/Engine3D.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version>
+      </Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Program Files (x86)\Urho3D\include;C:\Program Files (x86)\Urho3D\include\Urho3D\ThirdParty;C:\Program Files (x86)\Urho3D\include\Urho3D\ThirdParty\Bullet;C:\Program Files (x86)\Urho3D\include\Urho3D\ThirdParty\Lua;C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>RelWithDebInfo/</AssemblerListingLocation>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_SECURE_SCL=0;_HAS_ITERATOR_DEBUGGING=0;URHO3D_PROFILING;URHO3D_LOGGING;URHO3D_THREADING;GLEW_STATIC;GLEW_NO_GLU;URHO3D_ANGELSCRIPT;URHO3D_LUA;TOLUA_RELEASE;URHO3D_NAVIGATION;URHO3D_NETWORK;URHO3D_PHYSICS;URHO3D_URHO2D;URHO3D_CXX11;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR="RelWithDebInfo";Engine3D_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_SECURE_SCL=0;_HAS_ITERATOR_DEBUGGING=0;URHO3D_PROFILING;URHO3D_LOGGING;URHO3D_THREADING;GLEW_STATIC;GLEW_NO_GLU;URHO3D_ANGELSCRIPT;URHO3D_LUA;TOLUA_RELEASE;URHO3D_NAVIGATION;URHO3D_NETWORK;URHO3D_PHYSICS;URHO3D_URHO2D;URHO3D_CXX11;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR=\"RelWithDebInfo\";Engine3D_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Program Files (x86)\Urho3D\include;C:\Program Files (x86)\Urho3D\include\Urho3D\ThirdParty;C:\Program Files (x86)\Urho3D\include\Urho3D\ThirdParty\Bullet;C:\Program Files (x86)\Urho3D\include\Urho3D\ThirdParty\Lua;C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Program Files (x86)\Urho3D\include;C:\Program Files (x86)\Urho3D\include\Urho3D\ThirdParty;C:\Program Files (x86)\Urho3D\include\Urho3D\ThirdParty\Bullet;C:\Program Files (x86)\Urho3D\include\Urho3D\ThirdParty\Lua;C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions>%(AdditionalOptions)  /machine:X86</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;C:\Program Files (x86)\Urho3D\lib\Urho3D.lib;C:\Program Files (x86)\Urho3D\lib\Urho3D_d.lib;user32.lib;gdi32.lib;winmm.lib;imm32.lib;ole32.lib;oleaut32.lib;version.lib;uuid.lib;ws2_32.lib;winmm.lib;opengl32.lib;imm32.lib;ole32.lib;oleaut32.lib;version.lib;uuid.lib;ws2_32.lib;opengl32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>Debug</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/Jerome/Desktop/pb3d/PureBasic-Engine3D/build/RelWithDebInfo/Engine3D.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/Jerome/Desktop/pb3d/PureBasic-Engine3D/build/bin/Engine3D.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version>
+      </Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Program Files (x86)\Urho3D\include;C:\Program Files (x86)\Urho3D\include\Urho3D\ThirdParty;C:\Program Files (x86)\Urho3D\include\Urho3D\ThirdParty\Bullet;C:\Program Files (x86)\Urho3D\include\Urho3D\ThirdParty\Lua;C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Debug/</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_SECURE_SCL=0;_HAS_ITERATOR_DEBUGGING=0;URHO3D_PROFILING;URHO3D_LOGGING;URHO3D_THREADING;GLEW_STATIC;GLEW_NO_GLU;URHO3D_ANGELSCRIPT;URHO3D_LUA;TOLUA_RELEASE;URHO3D_NAVIGATION;URHO3D_NETWORK;URHO3D_PHYSICS;URHO3D_URHO2D;URHO3D_CXX11;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR="Debug";Engine3D_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_SECURE_SCL=0;_HAS_ITERATOR_DEBUGGING=0;URHO3D_PROFILING;URHO3D_LOGGING;URHO3D_THREADING;GLEW_STATIC;GLEW_NO_GLU;URHO3D_ANGELSCRIPT;URHO3D_LUA;TOLUA_RELEASE;URHO3D_NAVIGATION;URHO3D_NETWORK;URHO3D_PHYSICS;URHO3D_URHO2D;URHO3D_CXX11;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR=\"Debug\";Engine3D_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Program Files (x86)\Urho3D\include;C:\Program Files (x86)\Urho3D\include\Urho3D\ThirdParty;C:\Program Files (x86)\Urho3D\include\Urho3D\ThirdParty\Bullet;C:\Program Files (x86)\Urho3D\include\Urho3D\ThirdParty\Lua;C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Program Files (x86)\Urho3D\include;C:\Program Files (x86)\Urho3D\include\Urho3D\ThirdParty;C:\Program Files (x86)\Urho3D\include\Urho3D\ThirdParty\Bullet;C:\Program Files (x86)\Urho3D\include\Urho3D\ThirdParty\Lua;C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions>%(AdditionalOptions)  /machine:X86</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;C:\Program Files (x86)\Urho3D\lib\Urho3D_d.lib;C:\Program Files (x86)\Urho3D\lib\Urho3D_d.lib;user32.lib;gdi32.lib;winmm.lib;imm32.lib;ole32.lib;oleaut32.lib;version.lib;uuid.lib;ws2_32.lib;winmm.lib;opengl32.lib;imm32.lib;ole32.lib;oleaut32.lib;version.lib;uuid.lib;ws2_32.lib;opengl32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>Debug</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/Jerome/Desktop/pb3d/PureBasic-Engine3D/build/Debug/Engine3D.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/Jerome/Desktop/pb3d/PureBasic-Engine3D/build/bin/Engine3D.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version>
+      </Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule C:/Users/Jerome/Desktop/pb3d/PureBasic-Engine3D/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/Users/Jerome/Desktop/pb3d/PureBasic-Engine3D -BC:/Users/Jerome/Desktop/pb3d/PureBasic-Engine3D/build --check-stamp-file C:/Users/Jerome/Desktop/pb3d/PureBasic-Engine3D/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/Users/Jerome/Desktop/pb3d/PureBasic-Engine3D/CMakeLists.txt;C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\CMakeLists.txt;C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\build\CMakeFiles\3.8.0\CMakeSystem.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeSystemSpecificInitialize.cmake;C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\build\CMakeFiles\3.8.0\CMakeCCompiler.cmake;C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\build\CMakeFiles\3.8.0\CMakeCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\Platform\Windows-MSVC.cmake;C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\build\CMakeFiles\3.8.0\CMakeRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeCommonLanguageInclude.cmake;C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\CMake\Modules\Urho3D-CMake-common.cmake;C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\CMake\Modules\CheckHost.cmake;C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\CMake\Modules\CheckCompilerToolchain.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeDependentOption.cmake;C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\CMake\Modules\FindUrho3D.cmake;C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\CMake\Modules\CheckUrho3DLibrary.cpp;C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\CMake\Modules\CheckUrho3DLibrary.cpp;C:\Program Files\CMake\share\cmake-3.8\Modules\FindPackageMessage.cmake;C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\CMake\Modules\FindDirectX.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CheckIncludeFiles.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CheckIncludeFileCXX.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeParseArguments.cmake;C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\CMake\Modules\GenerateExportHeader.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CheckCXXCompilerFlag.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CheckCXXSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeCheckCompilerFlagCommonPatterns.cmake;C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\CMake\Modules\FindUrho3D.cmake;C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\CMake\Modules\CheckUrho3DLibrary.cpp;C:\Program Files\CMake\share\cmake-3.8\Modules\FindPackageMessage.cmake;C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule C:/Users/Jerome/Desktop/pb3d/PureBasic-Engine3D/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/Users/Jerome/Desktop/pb3d/PureBasic-Engine3D -BC:/Users/Jerome/Desktop/pb3d/PureBasic-Engine3D/build --check-stamp-file C:/Users/Jerome/Desktop/pb3d/PureBasic-Engine3D/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:/Users/Jerome/Desktop/pb3d/PureBasic-Engine3D/CMakeLists.txt;C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\CMakeLists.txt;C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\build\CMakeFiles\3.8.0\CMakeSystem.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeSystemSpecificInitialize.cmake;C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\build\CMakeFiles\3.8.0\CMakeCCompiler.cmake;C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\build\CMakeFiles\3.8.0\CMakeCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\Platform\Windows-MSVC.cmake;C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\build\CMakeFiles\3.8.0\CMakeRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeCommonLanguageInclude.cmake;C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\CMake\Modules\Urho3D-CMake-common.cmake;C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\CMake\Modules\CheckHost.cmake;C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\CMake\Modules\CheckCompilerToolchain.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeDependentOption.cmake;C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\CMake\Modules\FindUrho3D.cmake;C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\CMake\Modules\CheckUrho3DLibrary.cpp;C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\CMake\Modules\CheckUrho3DLibrary.cpp;C:\Program Files\CMake\share\cmake-3.8\Modules\FindPackageMessage.cmake;C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\CMake\Modules\FindDirectX.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CheckIncludeFiles.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CheckIncludeFileCXX.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeParseArguments.cmake;C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\CMake\Modules\GenerateExportHeader.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CheckCXXCompilerFlag.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CheckCXXSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeCheckCompilerFlagCommonPatterns.cmake;C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\CMake\Modules\FindUrho3D.cmake;C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\CMake\Modules\CheckUrho3DLibrary.cpp;C:\Program Files\CMake\share\cmake-3.8\Modules\FindPackageMessage.cmake;C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule C:/Users/Jerome/Desktop/pb3d/PureBasic-Engine3D/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/Users/Jerome/Desktop/pb3d/PureBasic-Engine3D -BC:/Users/Jerome/Desktop/pb3d/PureBasic-Engine3D/build --check-stamp-file C:/Users/Jerome/Desktop/pb3d/PureBasic-Engine3D/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/Users/Jerome/Desktop/pb3d/PureBasic-Engine3D/CMakeLists.txt;C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\CMakeLists.txt;C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\build\CMakeFiles\3.8.0\CMakeSystem.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeSystemSpecificInitialize.cmake;C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\build\CMakeFiles\3.8.0\CMakeCCompiler.cmake;C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\build\CMakeFiles\3.8.0\CMakeCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\Platform\Windows-MSVC.cmake;C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\build\CMakeFiles\3.8.0\CMakeRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeCommonLanguageInclude.cmake;C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\CMake\Modules\Urho3D-CMake-common.cmake;C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\CMake\Modules\CheckHost.cmake;C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\CMake\Modules\CheckCompilerToolchain.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeDependentOption.cmake;C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\CMake\Modules\FindUrho3D.cmake;C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\CMake\Modules\CheckUrho3DLibrary.cpp;C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\CMake\Modules\CheckUrho3DLibrary.cpp;C:\Program Files\CMake\share\cmake-3.8\Modules\FindPackageMessage.cmake;C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\CMake\Modules\FindDirectX.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CheckIncludeFiles.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CheckIncludeFileCXX.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeParseArguments.cmake;C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\CMake\Modules\GenerateExportHeader.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CheckCXXCompilerFlag.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CheckCXXSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeCheckCompilerFlagCommonPatterns.cmake;C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\CMake\Modules\FindUrho3D.cmake;C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\CMake\Modules\CheckUrho3DLibrary.cpp;C:\Program Files\CMake\share\cmake-3.8\Modules\FindPackageMessage.cmake;C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\src\Engine3D.cpp" />
+    <ClCompile Include="C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\src\Event.cpp" />
+    <ClCompile Include="C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\src\Node.cpp" />
+    <ClCompile Include="C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\src\Observer.cpp" />
+    <ClCompile Include="C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\src\ResourceCache.cpp" />
+    <ClCompile Include="C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\src\Scene.cpp" />
+    <ClCompile Include="C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\src\Subject.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\build\ZERO_CHECK.vcxproj">
+      <Project>905D8827-C0E7-33EC-9CEC-7F9B67B3D736</Project>
+      <Name>ZERO_CHECK</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

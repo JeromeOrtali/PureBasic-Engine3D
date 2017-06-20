@@ -3,7 +3,7 @@
 
 #include <algorithm>
 #include <vector>
-#include "observer.hpp"
+#include "Observer.hpp"
 
 class Subject {
 public:

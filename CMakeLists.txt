@@ -23,7 +23,7 @@ if (COMMAND cmake_policy)
 endif ()
 
 
-set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin)
+
 
 # Set CMake modules search path
 set (CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/CMake/Modules)
@@ -41,5 +41,5 @@ set (TARGET_NAME Engine3D)
 file (GLOB CPP_FILES src/*.cpp)
 file (GLOB H_FILES include/*.h)
 set (SOURCE_FILES ${CPP_FILES} ${H_FILES})
-
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/binary/bin)
 setup_library(SHARED)

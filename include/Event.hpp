@@ -4,66 +4,13 @@
 #include <Urho3D/Engine/Application.h>
 #include <Urho3D/Engine/Engine.h>
 #include <Urho3D/Input/InputEvents.h>
+#include <Urho3D/Resource/BackgroundLoader.h>
+#include <Urho3D/Resource/ResourceEvents.h>
 #include <queue>
 #include <map>
 
 #include "Observer.hpp"
 #include "Subject.hpp"
-
-/*
-/// Mouse button pressed.
-URHO3D_EVENT(E_MOUSEBUTTONDOWN, MouseButtonDown)
-{
-URHO3D_PARAM(P_BUTTON, Button);                // int
-URHO3D_PARAM(P_BUTTONS, Buttons);              // int
-URHO3D_PARAM(P_QUALIFIERS, Qualifiers);        // int
-}
-
-struct MouseButton{
-	int button;
-	int buttons;
-	int qualifiers;
-};
-
-/// Mouse button released.
-URHO3D_EVENT(E_MOUSEBUTTONUP, MouseButtonUp)
-{
-URHO3D_PARAM(P_BUTTON, Button);                // int
-URHO3D_PARAM(P_BUTTONS, Buttons);              // int
-URHO3D_PARAM(P_QUALIFIERS, Qualifiers);        // int
-}
-
-/// Mouse moved.
-URHO3D_EVENT(E_MOUSEMOVE, MouseMove)
-{
-URHO3D_PARAM(P_X, X);                          // int (only when mouse visible)
-URHO3D_PARAM(P_Y, Y);                          // int (only when mouse visible)
-URHO3D_PARAM(P_DX, DX);                        // int
-URHO3D_PARAM(P_DY, DY);                        // int
-URHO3D_PARAM(P_BUTTONS, Buttons);              // int
-URHO3D_PARAM(P_QUALIFIERS, Qualifiers);        // int
-}
-
-struct MouseMove{
-	int x;
-	int y;
-	int dx;
-	int dy;
-	int buttons;
-	int qualifiers;
-};
-
-/// Mouse wheel moved.
-URHO3D_EVENT(E_MOUSEWHEEL, MouseWheel)
-{
-URHO3D_PARAM(P_WHEEL, Wheel);                  // int
-URHO3D_PARAM(P_BUTTONS, Buttons);              // int
-URHO3D_PARAM(P_QUALIFIERS, Qualifiers);        // int
-}
-
-
-*/
-
 
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -75,7 +22,9 @@ enum EventType {
 	mouseButtonDown,
 	mouseButtonUp,
 	mouseMove,
-	mouseWheel
+	mouseWheel,
+	backgroundResourceLoaded,
+	resourceFileChange
 };
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -120,6 +69,23 @@ struct MouseWheel {
 };
 
 ///////////////////////////////////////////////////////////////////////////////
+//
+///////////////////////////////////////////////////////////////////////////////
+struct ResourceLoaded {
+	wchar_t*	name;
+	int			success;
+	void*		resource;
+};
+
+///////////////////////////////////////////////////////////////////////////////
+//
+///////////////////////////////////////////////////////////////////////////////
+struct ResourceFileChange {
+	wchar_t*	fileName;
+	wchar_t*	resourceName;
+};
+
+///////////////////////////////////////////////////////////////////////////////
 // PUREBASIC EVENT SYSTEM
 ///////////////////////////////////////////////////////////////////////////////
 struct Event {
@@ -127,10 +93,12 @@ struct Event {
 	EventType type;
 
 	union {
-		KeyEvent	key;
-		MouseButton	mousebutton;
-		MouseMove	mousemove;
-		MouseWheel  mousewheel;
+		KeyEvent			key;
+		MouseButton			mousebutton;
+		MouseMove			mousemove;
+		MouseWheel			mousewheel;
+		ResourceLoaded		resourceLoaded;
+		ResourceFileChange	resourceFileChange;
 	};
 
 };
@@ -160,6 +128,9 @@ public:
 
 	void ev_MouseWheel(Urho3D::StringHash eventType, Urho3D::VariantMap& eventData);
 
+	void ev_BackgroundLoadResource(Urho3D::StringHash eventType, Urho3D::VariantMap& eventData);
+
+	void ev_ResourceFileChange(Urho3D::StringHash eventType, Urho3D::VariantMap& eventData);
 
 	virtual void notify(int what, void* data, int size);
 

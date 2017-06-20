@@ -18,7 +18,7 @@ PB_FUNCTION(void) PB_InitEngine3D(int argc, char **argv) {
 ///////////////////////////////////////////////////////////////////////////////
 //
 ///////////////////////////////////////////////////////////////////////////////
-PB_FUNCTION(void) PB_OpenScreen3D(int width, int height, int fullscreen, const char* title, int resizable) {
+PB_FUNCTION(void) PB_OpenScreen3D(int width, int height, int fullscreen, const unsigned short* title, int resizable) {
 
 	Urho3D::VariantMap & map = *PB_ENGINE_PARAMETERS;
 
@@ -30,7 +30,8 @@ PB_FUNCTION(void) PB_OpenScreen3D(int width, int height, int fullscreen, const c
 	}
 
 	map["WindowWidth"]		= width;
-	map["WindowHeight"]	= height;
+	map["WindowHeight"]		= height;
+	map["WindowTitle"]		= Urho3D::String((const wchar_t*)title);
 
 	if (resizable == 1) {
 		map["WindowResizable"] = true;
