@@ -6,7 +6,7 @@
 	#Event_MouseMove
 	#Event_MouseWheel
 	#Event_BackgroundResourceLoaded
-	#Event_ResourceFileChanged
+	#Event_ResourceFileChanged ; inused for now
 EndEnumeration
 
 Structure KeyEvent
@@ -61,6 +61,5 @@ Structure Event
   EndStructureUnion
 EndStructure
 ; IDE Options = PureBasic 5.60 (Windows - x86)
-; CursorPosition = 59
-; FirstLine = 12
+; CursorPosition = 8
 ; EnableXP

@@ -17,12 +17,28 @@
 
 
 #ifndef PB_FUNCTION
-#define PB_FUNCTION(T) __declspec(dllexport) T
+	#define PB_FUNCTION(T) __declspec(dllexport) T
 #endif 
+
+enum NodeComponent {
+	camera,
+	staticModel,
+	skybox,
+	light
+};
+
 
 extern "C" {
 
+	PB_FUNCTION(void*) PB_CreateNodeComponent(Urho3D::Node* node, NodeComponent component);
 
+	PB_FUNCTION(Urho3D::Node*) PB_GetChildByName(Urho3D::Node* node, const unsigned short* name, int recursive);
+
+	PB_FUNCTION(Urho3D::Node*) PB_GetChildByID(Urho3D::Node* node, unsigned int id);
+
+	PB_FUNCTION(void) PB_SetNodePosition(Urho3D::Node* node, float x, float y, float z);
+
+	PB_FUNCTION(void) PB_SetNodeRotation(Urho3D::Node* node, float x, float y, float z);
 
 }
 

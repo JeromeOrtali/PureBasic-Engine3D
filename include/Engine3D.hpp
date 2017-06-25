@@ -5,6 +5,7 @@
 #include <Urho3D/Engine/Engine.h>
 #include <Urho3D/Input/InputEvents.h>
 #include <Urho3D/Resource/ResourceCache.h>
+#include <Urho3D/Graphics/Renderer.h>
 #include <Urho3D/IO/IOEvents.h>
 
 #include "Event.hpp"
