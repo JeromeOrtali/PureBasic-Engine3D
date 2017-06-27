@@ -25,24 +25,12 @@ extern Urho3D::ResourceCache* PB_RESOURCECACHE;
 
 extern "C" {
 
-	PB_FUNCTION(void) PB_SetModel(Urho3D::StaticModel* node, Urho3D::Model* model);
+	PB_FUNCTION(Urho3D::StaticModel*) uh3_getStaticModel(Urho3D::Node* node, int recursive);
 
-	PB_FUNCTION(void) PB_SetMaterial(Urho3D::StaticModel* node, Urho3D::Material* material);
+	PB_FUNCTION(void) uh3_SetModel(Urho3D::StaticModel* node, Urho3D::Model* model);
+
+	PB_FUNCTION(void) uh3_SetMaterial(Urho3D::StaticModel* node, Urho3D::Material* material);
 	
-
-	PB_FUNCTION(Urho3D::AnimatedModel*) PB_GetAnimatedModel(Urho3D::Node* node);
-
-	PB_FUNCTION(Urho3D::AnimationController*) PB_GetAnimationController(Urho3D::AnimatedModel* model);
-
-	PB_FUNCTION(void) PB_PlayAnimation(Urho3D::AnimationController* controller, const unsigned short* name, unsigned char layer, int looped, float fadeTime);
-
-	PB_FUNCTION(void) PB_SetAnimationSpeed(Urho3D::AnimationController* controller, const unsigned short* name, float speed);
-
-	PB_FUNCTION(void) PB_StopAllAnimation(Urho3D::AnimationController* controller, float fadeTime);
-
-	PB_FUNCTION(int) PB_AnimationIsEnd(Urho3D::AnimationController* controller, const unsigned short* name);
-
-
 
 }
 

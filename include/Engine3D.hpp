@@ -24,19 +24,14 @@ std::queue<Event>*					PB_EVENT;
 #endif 
 
 void register_script();
+
 extern "C" {
-
-	PB_FUNCTION(void) PB_InitEngine3D(int argc, char **argv);
-
-	PB_FUNCTION(void) PB_OpenScreen3D(int width, int height, int fullscreen, const unsigned short* title, int resizable);
-
-	PB_FUNCTION(void) PB_EmbedScreen(void *window);
-
-	PB_FUNCTION(int) PB_EngineRun();
-
-	PB_FUNCTION(void) PB_EngineExit();
-
-	PB_FUNCTION(void) PB_EngineRenderFrame();
+	PB_FUNCTION(void) uh3_InitEngine3D(int argc, char **argv);
+	PB_FUNCTION(void) uh3_OpenScreen3D(int width, int height, int fullscreen, const unsigned short* title, int resizable);
+	PB_FUNCTION(void) uh3_EmbedScreen(void *window);
+	PB_FUNCTION(int)  uh3_EngineRun();
+	PB_FUNCTION(void) uh3_EngineExit();
+	PB_FUNCTION(void) uh3_EngineRenderFrame();
 }
 
 

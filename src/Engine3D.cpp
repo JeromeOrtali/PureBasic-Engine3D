@@ -8,7 +8,7 @@ void register_script() {
 ///////////////////////////////////////////////////////////////////////////////
 //
 ///////////////////////////////////////////////////////////////////////////////
-PB_FUNCTION(void) PB_InitEngine3D(int argc, char **argv) {
+PB_FUNCTION(void) uh3_InitEngine3D(int argc, char **argv) {
 
 	Urho3D::ParseArguments(argc, argv);
 	PB_ENGINE_PARAMETERS	= new Urho3D::VariantMap();
@@ -26,7 +26,7 @@ PB_FUNCTION(void) PB_InitEngine3D(int argc, char **argv) {
 ///////////////////////////////////////////////////////////////////////////////
 //
 ///////////////////////////////////////////////////////////////////////////////
-PB_FUNCTION(void) PB_OpenScreen3D(int width, int height, int fullscreen, const unsigned short* title, int resizable) {
+PB_FUNCTION(void) uh3_OpenScreen3D(int width, int height, int fullscreen, const unsigned short* title, int resizable) {
 
 	Urho3D::VariantMap & map = *PB_ENGINE_PARAMETERS;
 
@@ -54,7 +54,7 @@ PB_FUNCTION(void) PB_OpenScreen3D(int width, int height, int fullscreen, const u
 ///////////////////////////////////////////////////////////////////////////////
 //
 ///////////////////////////////////////////////////////////////////////////////
-PB_FUNCTION(void) PB_EmbedScreen(void *window) {
+PB_FUNCTION(void) uh3_EmbedScreen(void *window) {
 	Urho3D::VariantMap & map = *PB_ENGINE_PARAMETERS;
 	map["ExternalWindow"] = window;
 	map["LogLevel "] = Urho3D::LOG_DEBUG;
@@ -65,14 +65,14 @@ PB_FUNCTION(void) PB_EmbedScreen(void *window) {
 ///////////////////////////////////////////////////////////////////////////////
 //
 ///////////////////////////////////////////////////////////////////////////////
-PB_FUNCTION(int) PB_EngineRun() {
+PB_FUNCTION(int) uh3_EngineRun() {
 	return PB_ENGINE->IsExiting() ? false : true;
 }
 
 ///////////////////////////////////////////////////////////////////////////////
 //
 ///////////////////////////////////////////////////////////////////////////////
-PB_FUNCTION(void) PB_EngineExit() {
+PB_FUNCTION(void) uh3_EngineExit() {
 	PB_ENGINE->Exit();
 
 	delete PB_ENGINE_CONTEXT;
@@ -85,7 +85,7 @@ PB_FUNCTION(void) PB_EngineExit() {
 ///////////////////////////////////////////////////////////////////////////////
 //
 ///////////////////////////////////////////////////////////////////////////////
-PB_FUNCTION(void) PB_EngineRenderFrame() {
+PB_FUNCTION(void) uh3_EngineRenderFrame() {
 	PB_ENGINE->Update();
 	PB_ENGINE->RunFrame();
 }

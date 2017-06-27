@@ -183,7 +183,7 @@ void PB_EventHandler::unBindFunction(EventType type, fn_callback) {
 ///////////////////////////////////////////////////////////////////////////////
 // EXPORTED FUNCTIONS
 ///////////////////////////////////////////////////////////////////////////////
-PB_FUNCTION(int) PB_EnginePoolEvent(Event* ev) {
+PB_FUNCTION(int) uh3_PoolEvent(Event* ev) {
 	if (PB_EVENT->size()) {
 		*ev = PB_EVENT->front();
 		PB_EVENT->pop();
@@ -195,13 +195,13 @@ PB_FUNCTION(int) PB_EnginePoolEvent(Event* ev) {
 ///////////////////////////////////////////////////////////////////////////////
 //
 ///////////////////////////////////////////////////////////////////////////////
-PB_FUNCTION(void) PB_BindEvent(int type, void* callback) {
+PB_FUNCTION(void) uh3_BindEvent(int type, void* callback) {
 	PB_URHOEVENT->bindFunction((EventType)type, (PB_EventHandler::fn_callback)callback);
 }
 
 ///////////////////////////////////////////////////////////////////////////////
 //
 ///////////////////////////////////////////////////////////////////////////////
-PB_FUNCTION(void) PB_UnBindEvent(int type, void* callback) {
+PB_FUNCTION(void) uh3_UnBindEvent(int type, void* callback) {
 	PB_URHOEVENT->unBindFunction((EventType)type, (PB_EventHandler::fn_callback)callback);
 }

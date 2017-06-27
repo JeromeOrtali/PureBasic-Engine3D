@@ -18,7 +18,7 @@ extern Urho3D::Context*						PB_ENGINE_CONTEXT;
 extern Urho3D::SharedPtr<Urho3D::Engine>	PB_ENGINE;
 
 extern "C" {
-	PB_FUNCTION(Urho3D::Viewport*) PB_CreateViewport(Urho3D::Scene* scene, Urho3D::Node* camera);
+	PB_FUNCTION(Urho3D::Viewport*) uh3_CreateViewport(Urho3D::Scene* scene, Urho3D::Node* camera);
 }
 
 

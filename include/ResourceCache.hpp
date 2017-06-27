@@ -36,9 +36,9 @@ enum Resource {
 #endif 
 
 extern "C" {
-	PB_FUNCTION(void*) PB_getResource(Resource type, const unsigned short* name);
+	PB_FUNCTION(void*) uh3_getResource(Resource type, const unsigned short* name);
 
-	PB_FUNCTION(int) PB_backgroundLoadResource(Resource type, const unsigned short* name);
+	PB_FUNCTION(int) uh3_backgroundLoadResource(Resource type, const unsigned short* name);
 }
 
 

@@ -44,21 +44,21 @@ void register_script();
 
 extern "C" {
 
-	PB_FUNCTION(Urho3D::Scene*) PB_CreateScene();
+	PB_FUNCTION(Urho3D::Scene*) uh3_CreateScene();
 
-	PB_FUNCTION(void) PB_FreeScene(Urho3D::Scene* scene);
+	PB_FUNCTION(void) uh3FreeScene(Urho3D::Scene* scene);
 
-	PB_FUNCTION(Urho3D::Component*) PB_CreateSceneComponent(Urho3D::Scene* scene, SceneComponent component);
+	PB_FUNCTION(Urho3D::Component*) uh3_CreateSceneComponent(Urho3D::Scene* scene, SceneComponent component);
 
-	PB_FUNCTION(Urho3D::Node*) PB_CreateNode(Urho3D::Scene* scene, const unsigned short* name);
+	PB_FUNCTION(Urho3D::Node*) uh3_CreateNode(Urho3D::Scene* scene, const unsigned short* name);
 
-	PB_FUNCTION(int) PB_SaveScene(Urho3D::Scene* scene, const unsigned short* name, SceneFormat format);
+	PB_FUNCTION(int) uh3_SaveScene(Urho3D::Scene* scene, const unsigned short* name, SceneFormat format);
 
-	PB_FUNCTION(int) PB_LoadScene(Urho3D::Scene* scene, const unsigned short* name, SceneFormat format);
+	PB_FUNCTION(int) uh3_LoadScene(Urho3D::Scene* scene, const unsigned short* name, SceneFormat format);
 	
-	PB_FUNCTION(int) PB_LoadScene2(Urho3D::Scene* scene, void* resource, SceneFormat format);
+	PB_FUNCTION(int) uh3_LoadScene2(Urho3D::Scene* scene, void* resource, SceneFormat format);
 
-	PB_FUNCTION(void) PB_UpdateScene(Urho3D::Scene* scene, float timestep);
+	PB_FUNCTION(void) uh3_UpdateScene(Urho3D::Scene* scene, float timestep);
 
 }
 

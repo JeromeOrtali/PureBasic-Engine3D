@@ -155,11 +155,11 @@ extern PB_EventHandler*		PB_URHOEVENT;
 ///////////////////////////////////////////////////////////////////////////////
 extern "C" {
 
-	PB_FUNCTION(int) PB_EnginePoolEvent(Event* ev);
+	PB_FUNCTION(int) uh3_PoolEvent(Event* ev);
 
-	PB_FUNCTION(void) PB_BindEvent(int type, void* callback);
+	PB_FUNCTION(void) uh3_BindEvent(int type, void* callback);
 
-	PB_FUNCTION(void) PB_UnBindEvent(int type, void* callback);
+	PB_FUNCTION(void) uh3_UnBindEvent(int type, void* callback);
 
 }
 
