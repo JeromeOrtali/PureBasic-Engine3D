@@ -1,13 +1,17 @@
-﻿XIncludeFile "Config.pbi"
+﻿IncludePath "include"
+XIncludeFile "Config.pbi"
 XIncludeFile "Event.pbi"
 XIncludeFile "Scene.pbi"
 XIncludeFile "Viewport.pbi"
 XIncludeFile "Node.pbi"
+XIncludeFile "Model.pbi"
+XIncludeFile "AnimatedModel.pbi"
+XIncludeFile "Script.pbi"
+XIncludeFile "Light.pbi"
 
-
-
-
-
+;//////////////////////////////////////////////////////////////////////////////
+;//
+;//////////////////////////////////////////////////////////////////////////////
 Enumeration
 	#Resource_Sound
 	#Resource_Material
@@ -21,27 +25,64 @@ Enumeration
 	#Resource_script
 EndEnumeration
 
+;//////////////////////////////////////////////////////////////////////////////
+;//
+;//////////////////////////////////////////////////////////////////////////////
+HELP_PARAM("Nombre d'arguments passé à l'éxecutable")
+HELP_PARAM("Pointeur sur les paramètres passée a l'executable")
+IMPORT_FUNCTION(uh3_InitEngine3D, void, argc.l _ *argv)
 
 
-IMPORT_FUNCTION(PB_InitEngine3D, void, argc.l _ *argv)
-IMPORT_FUNCTION(PB_OpenScreen3D, void, width.l _ height.l _ fullscreen.l _ title.s _ resizable.l)
-IMPORT_FUNCTION(PB_EmbedScreen, void, *window)
-IMPORT_FUNCTION(PB_EngineRun, .i , void)
-IMPORT_FUNCTION(PB_EngineExit, void, void)
-IMPORT_FUNCTION(PB_EngineRenderFrame, void, void)
+HELP_DESC("")
+HELP_PARAM("")
+HELP_PARAM("")
+HELP_PARAM("")
+HELP_PARAM("")
+HELP_PARAM("")
+IMPORT_FUNCTION(uh3_OpenScreen3D, void, width.l _ height.l _ fullscreen.l _ title.s _ resizable.l)
 
-IMPORT_FUNCTION(PB_EnginePoolEvent, void, *event)
-IMPORT_FUNCTION(PB_BindEvent, void, type.l _ *callback)
-IMPORT_FUNCTION(PB_UnBindEvent, void, type.l _ *callback)
+HELP_DESC("")  
+HELP_PARAM("")
+IMPORT_FUNCTION(uh3_EmbedScreen, void, *window)
 
-IMPORT_FUNCTION(PB_getResource, .i, type.l _ name.s)
-IMPORT_FUNCTION(PB_backgroundLoadResource, .l, type.l _ name.s)
+HELP_DESC("")  
+IMPORT_FUNCTION(uh3_EngineRun, .i , void)
+
+HELP_DESC("")    
+IMPORT_FUNCTION(uh3_EngineExit, void, void)
+
+HELP_DESC("")
+IMPORT_FUNCTION(uh3_EngineRenderFrame, void, void)
+
+HELP_DESC("")
+HELP_PARAM("")
+IMPORT_FUNCTION(uh3_PoolEvent, void, *event)
+
+HELP_DESC("")
+HELP_PARAM("")
+HELP_PARAM("")
+IMPORT_FUNCTION(uh3_BindEvent, void, type.l _ *callback)
+
+HELP_DESC("")
+HELP_PARAM("")
+HELP_PARAM("")
+IMPORT_FUNCTION(uh3_UnBindEvent, void, type.l _ *callback)
+
+HELP_DESC("")
+HELP_PARAM("")
+HELP_PARAM("")
+IMPORT_FUNCTION(uh3_getResource, .i, type.l _ name.s)
+
+HELP_DESC("")
+HELP_PARAM("")
+HELP_PARAM("")
+IMPORT_FUNCTION(uh3_backgroundLoadResource, .l, type.l _ name.s)
 
 
 
 
 
-
+ HELP_WRITE_FILE()
 
 ; ; ExamineLibraryFunctions(0)
 ; ; 
@@ -137,7 +178,7 @@ IMPORT_FUNCTION(PB_backgroundLoadResource, .l, type.l _ name.s)
 ; ;    
 
 ; IDE Options = PureBasic 5.60 (Windows - x86)
-; CursorPosition = 20
+; CursorPosition = 9
 ; EnableXP
 ; Executable = Test.exe
 ; SubSystem = opengl

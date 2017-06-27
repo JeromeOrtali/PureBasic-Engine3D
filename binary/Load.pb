@@ -21,42 +21,42 @@ Dim Soldiers.Soldier(3)
 Global *cameraPivot
 
 OpenConsole()
-PB_InitEngine3D(#Null,#Null)
+uh3_InitEngine3D(#Null,#Null)
 ExamineDesktops()
 
-PB_OpenScreen3D(DesktopWidth(0),DesktopHeight(0),#False,"Urho3D-PureBasic",#False)
+uh3_OpenScreen3D(DesktopWidth(0),DesktopHeight(0),#False,"Urho3D-PureBasic",#False)
 
 Global CameraYaw.f
 Global CameraPitch.f
 Global *cameranode
 
-*scene          = PB_CreateScene()
+*scene   = uh3_CreateScene()
 
- PB_LoadScene(*scene ,"SceneDemo.json",#SceneFormat_json)
+ uh3_LoadScene(*scene ,"SceneDemo.json",#SceneFormat_json)
 
-*octree         = PB_CreateSceneComponent(*scene, #SceneComponent_octree)
-*debugRenderer  = PB_CreateSceneComponent(*scene, #SceneComponent_debugRenderer)
+*octree         = uh3_CreateSceneComponent(*scene, #SceneComponent_octree)
+*debugRenderer  = uh3_CreateSceneComponent(*scene, #SceneComponent_debugRenderer)
 
-*cameraPivot    = PB_CreateNode(*scene, "CameraPivot")
+*cameraPivot    = uh3_CreateNode(*scene, "CameraPivot")
 
-*cameranode     = PB_CreateNode(*cameraPivot, "CameraNode")
-*camera         = PB_CreateNodeComponent(*cameranode,#NodeComponent_camera)
+*cameranode     = uh3_CreateNode(*cameraPivot, "CameraNode")
+*camera         = uh3_CreateNodeComponent(*cameranode,#NodeComponent_camera)
 
-PB_SetNodePosition(*cameranode,0,1,-10)
-*viewport   = PB_CreateViewport(*scene,*cameranode)
+uh3_SetNodePosition(*cameranode,0,1,-10)
+*viewport   = uh3_CreateViewport(*scene,*cameranode)
 
 
-*soldier0 = PB_GetChildByName(*scene,"Soldier0",#True)
-*soldier1 = PB_GetChildByName(*scene,"Soldier1",#True)
-*soldier2 = PB_GetChildByName(*scene,"Soldier2",#True)
+*soldier0 = uh3_GetChildByName(*scene,"Soldier0",#True)
+*soldier1 = uh3_GetChildByName(*scene,"Soldier1",#True)
+*soldier2 = uh3_GetChildByName(*scene,"Soldier2",#True)
 
-*SoldierAnimatedModel0 = PB_GetAnimatedModel(*soldier0) ; Retrieve animatedModel
-*SoldierAnimatedModel1 = PB_GetAnimatedModel(*soldier1)
-*SoldierAnimatedModel2 = PB_GetAnimatedModel(*soldier2)
+*SoldierAnimatedModel0 = uh3_GetAnimatedModel(*soldier0) ; Retrieve animatedModel
+*SoldierAnimatedModel1 = uh3_GetAnimatedModel(*soldier1)
+*SoldierAnimatedModel2 = uh3_GetAnimatedModel(*soldier2)
 
-Soldiers(0)\AnimationController = PB_GetAnimationController(*SoldierAnimatedModel0) ; Retrieve AnimationController component
-Soldiers(1)\AnimationController = PB_GetAnimationController(*SoldierAnimatedModel1)
-Soldiers(2)\AnimationController = PB_GetAnimationController(*SoldierAnimatedModel2)
+Soldiers(0)\AnimationController = uh3_GetAnimationController(*SoldierAnimatedModel0) ; Retrieve AnimationController component
+Soldiers(1)\AnimationController = uh3_GetAnimationController(*SoldierAnimatedModel1)
+Soldiers(2)\AnimationController = uh3_GetAnimationController(*SoldierAnimatedModel2)
 
 
 For i = 0 To 2
@@ -69,8 +69,8 @@ For i = 0 To 2
     Soldiers(i)\Anim[j]\timeToAnim =  ElapsedMilliseconds() + Random(2000,500)
   Next  
 
-  PB_PlayAnimation(Soldiers(i)\AnimationController , Soldiers(i)\Anim[Soldiers(i)\AnimState]\name,0,#True,5.0)
-  PB_SetAnimationSpeed(Soldiers(i)\AnimationController,Soldiers(i)\Anim[Soldiers(i)\AnimState]\name,0.5)
+  uh3_PlayAnimation(Soldiers(i)\AnimationController , Soldiers(i)\Anim[Soldiers(i)\AnimState]\name,0,#True,5.0)
+  uh3_SetAnimationSpeed(Soldiers(i)\AnimationController,Soldiers(i)\Anim[Soldiers(i)\AnimState]\name,0.5)
   
 Next 
 
@@ -79,11 +79,11 @@ Next
 ProcedureC _MoveCamera(*ev.Event)
   CameraYaw +  *ev\mousemove\dx * 0.05
   CameraPitch + *ev\mousemove\dy * 0.05
-  PB_SetNodeRotation(*cameraPivot,CameraPitch,CameraYaw,0)
+  uh3_SetNodeRotation(*cameraPivot,CameraPitch,CameraYaw,0)
 EndProcedure
 
 ProcedureC _ZoomCamera(*ev.Event)
-  PB_NodeTranslate(*cameranode,0,0,  *ev\mousewheel\wheel  ,0)
+  uh3_NodeTranslate(*cameranode,0,0,  *ev\mousewheel\wheel  ,0)
 EndProcedure
 
 
@@ -93,18 +93,18 @@ ProcedureC _Loaded(*ev.Event)
 EndProcedure
 
 
-PB_BindEvent(#Event_MouseMove,@_MoveCamera())
-PB_BindEvent(#Event_MouseWheel,@_ZoomCamera())
-PB_BindEvent(#Event_BackgroundResourceLoaded,@_Loaded())
+uh3_BindEvent(#Event_MouseMove,@_MoveCamera())
+uh3_BindEvent(#Event_MouseWheel,@_ZoomCamera())
+uh3_BindEvent(#Event_BackgroundResourceLoaded,@_Loaded())
 
 
 
-While( PB_EngineRun() )
+While( uh3_EngineRun() )
   event.Event
-  While(PB_EnginePoolEvent(@event))
+  While(uh3_PoolEvent(@event))
     If event\type = #Event_KeyDown
       If event\key\key = 27
-        PB_EngineExit()
+        uh3_EngineExit()
         Break 2 
       EndIf 
     EndIf 
@@ -116,20 +116,20 @@ While( PB_EngineRun() )
       Soldiers(i)\AnimState =  Random(3,0) 
       
       If Soldiers(i)\AnimState = 3      
-        PB_PlayAnimation(Soldiers(i)\AnimationController , Soldiers(i)\Anim[Soldiers(i)\AnimState]\name,0,#False,2.0)
+        uh3_PlayAnimation(Soldiers(i)\AnimationController , Soldiers(i)\Anim[Soldiers(i)\AnimState]\name,0,#False,2.0)
       Else
-        PB_PlayAnimation(Soldiers(i)\AnimationController , Soldiers(i)\Anim[Soldiers(i)\AnimState]\name,0,#True,2.0)
+        uh3_PlayAnimation(Soldiers(i)\AnimationController , Soldiers(i)\Anim[Soldiers(i)\AnimState]\name,0,#True,2.0)
       EndIf
       
-      PB_SetAnimationSpeed(Soldiers(i)\AnimationController,Soldiers(i)\Anim[Soldiers(i)\AnimState]\name,0.5)
+      uh3_SetAnimationSpeed(Soldiers(i)\AnimationController,Soldiers(i)\Anim[Soldiers(i)\AnimState]\name,0.5)
       
       
       
     EndIf 
     
     If Soldiers(i)\AnimState = 3
-      If PB_AnimationIsEnd(Soldiers(i)\AnimationController,Soldiers(i)\Anim[3]\name)
-        PB_StopAllAnimation(Soldiers(i)\AnimationController,2)
+      If uh3_AnimationIsEnd(Soldiers(i)\AnimationController,Soldiers(i)\Anim[3]\name)
+        uh3_StopAllAnimation(Soldiers(i)\AnimationController,2)
       EndIf
     EndIf
     
@@ -139,7 +139,7 @@ While( PB_EngineRun() )
   
   
 
-    PB_EngineRenderFrame()
+    uh3_EngineRenderFrame()
 
 Wend 
 
@@ -148,7 +148,7 @@ Wend
 
 ; IDE Options = PureBasic 5.60 (Windows - x86)
 ; ExecutableFormat = Console
-; CursorPosition = 96
-; FirstLine = 54
+; CursorPosition = 31
+; FirstLine = 30
 ; Folding = -
 ; EnableXP
