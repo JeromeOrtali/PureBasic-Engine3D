@@ -20,6 +20,11 @@ IMPORT_FUNCTION(PB_CreateSceneComponent, .i , *scene _ component.l)
 IMPORT_FUNCTION(PB_CreateNode, .i , *scene _ name.s)
 IMPORT_FUNCTION(PB_SaveScene, .i , *scene _ name.s _ format.l)
 IMPORT_FUNCTION(PB_LoadScene, .i , *scene _ name.s _ format.l)
+IMPORT_FUNCTION(PB_LoadScene2, .i , *scene _ *resource _ format.l)
+IMPORT_FUNCTION(PB_UpdateScene, void , *scene _ timestep.f)
+
+
+
 ; IDE Options = PureBasic 5.60 (Windows - x86)
-; CursorPosition = 11
+; CursorPosition = 22
 ; EnableXP

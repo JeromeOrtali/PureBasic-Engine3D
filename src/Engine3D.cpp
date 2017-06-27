@@ -1,5 +1,10 @@
 #include "Engine3D.hpp"
 
+
+void register_script() {
+	PB_ENGINE_CONTEXT->RegisterSubsystem(new Urho3D::Script(PB_ENGINE_CONTEXT));
+}
+
 ///////////////////////////////////////////////////////////////////////////////
 //
 ///////////////////////////////////////////////////////////////////////////////
@@ -13,6 +18,9 @@ PB_FUNCTION(void) PB_InitEngine3D(int argc, char **argv) {
 	PB_URHOEVENT			= new PB_EventHandler(PB_ENGINE_CONTEXT);
 	PB_EVENT				= new std::queue<Event>;
 	PB_RESOURCECACHE		= PB_ENGINE_CONTEXT->GetSubsystem<Urho3D::ResourceCache>();// Urho3D::GetSubsystem<ResourceCache>();//new Urho3D::ResourceCache(PB_ENGINE_CONTEXT);
+
+	//PB_ENGINE_CONTEXT->RegisterFactory<Urho3D::ScriptInstance>("ScriptInstance");
+	
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -32,7 +40,7 @@ PB_FUNCTION(void) PB_OpenScreen3D(int width, int height, int fullscreen, const u
 	map["WindowWidth"]		= width;
 	map["WindowHeight"]		= height;
 	map["WindowTitle"]		= Urho3D::String((const wchar_t*)title);
-
+	map["LogLevel "]		= Urho3D::LOG_DEBUG;
 	if (resizable == 1) {
 		map["WindowResizable"] = true;
 	}else{
@@ -40,7 +48,7 @@ PB_FUNCTION(void) PB_OpenScreen3D(int width, int height, int fullscreen, const u
 	}
 
 	PB_ENGINE->Initialize(*PB_ENGINE_PARAMETERS);
-
+	PB_ENGINE_CONTEXT->RegisterSubsystem(new Urho3D::Script(PB_ENGINE_CONTEXT));
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -49,7 +57,9 @@ PB_FUNCTION(void) PB_OpenScreen3D(int width, int height, int fullscreen, const u
 PB_FUNCTION(void) PB_EmbedScreen(void *window) {
 	Urho3D::VariantMap & map = *PB_ENGINE_PARAMETERS;
 	map["ExternalWindow"] = window;
+	map["LogLevel "] = Urho3D::LOG_DEBUG;
 	PB_ENGINE->Initialize(*PB_ENGINE_PARAMETERS);
+	PB_ENGINE_CONTEXT->RegisterSubsystem(new Urho3D::Script(PB_ENGINE_CONTEXT));
 }
 
 ///////////////////////////////////////////////////////////////////////////////

@@ -11,6 +11,14 @@
 #include <Urho3D/Scene/SceneEvents.h>
 #include <Urho3D/IO/Serializer.h>
 #include <Urho3D/IO/File.h>
+#include <Urho3D/Resource/XMLFile.h>
+#include <Urho3D/Resource/JSONFile.h>
+
+
+#include <Urho3D/AngelScript/Script.h>
+#include <Urho3D/AngelScript/ScriptInstance.h>
+
+
 
 #ifndef PB_FUNCTION
 	#define PB_FUNCTION(T) __declspec(dllexport) T
@@ -31,6 +39,8 @@ enum SceneFormat {
 	BINARY
 };
 
+extern Urho3D::Context*	PB_ENGINE_CONTEXT;
+void register_script();
 
 extern "C" {
 
@@ -45,6 +55,10 @@ extern "C" {
 	PB_FUNCTION(int) PB_SaveScene(Urho3D::Scene* scene, const unsigned short* name, SceneFormat format);
 
 	PB_FUNCTION(int) PB_LoadScene(Urho3D::Scene* scene, const unsigned short* name, SceneFormat format);
+	
+	PB_FUNCTION(int) PB_LoadScene2(Urho3D::Scene* scene, void* resource, SceneFormat format);
+
+	PB_FUNCTION(void) PB_UpdateScene(Urho3D::Scene* scene, float timestep);
 
 }
 

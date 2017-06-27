@@ -4,7 +4,7 @@ Global __SHARED_LIBRARY__
 
 CompilerIf #PB_Compiler_Processor = #PB_Processor_x86
   CompilerIf #PB_Compiler_OS = #PB_OS_Windows
-  __SHARED_LIBRARY__ = OpenLibrary(#PB_Any,"bin/Engine3D.dll")
+  __SHARED_LIBRARY__ = OpenLibrary(#PB_Any,"../build/bin/Engine3D.dll")
   CompilerElseIf #PB_Compiler_OS = #PB_OS_Linux
     MessageRequester("Erreur","ONLY WINDOWS!")
     End 
@@ -37,7 +37,16 @@ Macro IMPORT_FUNCTION(name, ret, param)
   PrototypeC#ret name(param)
   Global name.name = GetFunction(__SHARED_LIBRARY__,QUOTE#name#QUOTE)
 EndMacro
+
+
+
+; ExamineLibraryFunctions(__SHARED_LIBRARY__)
+; 
+; While NextLibraryFunction()
+;   Debug LibraryFunctionName()
+; Wend 
+
 ; IDE Options = PureBasic 5.60 (Windows - x86)
-; CursorPosition = 37
+; CursorPosition = 6
 ; Folding = --
 ; EnableXP

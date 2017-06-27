@@ -1,0 +1,120 @@
+{
+	"id": 1,
+	"attributes": {
+		"Name": "",
+		"Time Scale": 1,
+		"Smoothing Constant": 50,
+		"Snap Threshold": 5,
+		"Elapsed Time": 0,
+		"Next Replicated Node ID": 6,
+		"Next Replicated Component ID": 7,
+		"Next Local Node ID": 16777216,
+		"Next Local Component ID": 16777216,
+		"Variables": {},
+		"Variable Names": ""
+	},
+	"components": [
+		{
+			"type": "Octree",
+			"id": 1,
+			"attributes": null
+		},
+		{
+			"type": "DebugRenderer",
+			"id": 2
+		}
+	],
+	"children": [
+		{
+			"id": 2,
+			"attributes": {
+				"Is Enabled": true,
+				"Name": "Camera",
+				"Tags": [],
+				"Position": "0 0 0",
+				"Rotation": "1 0 0 0",
+				"Scale": "1 1 1",
+				"Variables": {}
+			},
+			"components": [
+				{
+					"type": "Camera",
+					"id": 3,
+					"attributes": {
+						"Far Clip": 2000
+					}
+				}
+			],
+			"children": []
+		},
+		{
+			"id": 3,
+			"attributes": {
+				"Is Enabled": true,
+				"Name": "sky",
+				"Tags": [],
+				"Position": "0 0 0",
+				"Rotation": "1 0 0 0",
+				"Scale": "1 1 1",
+				"Variables": {}
+			},
+			"components": [
+				{
+					"type": "Skybox",
+					"id": 4,
+					"attributes": {
+						"Model": "Model;Models/Box.mdl",
+						"Material": "Material;Materials/Skybox.xml"
+					}
+				}
+			],
+			"children": []
+		},
+		{
+			"id": 4,
+			"attributes": {
+				"Is Enabled": true,
+				"Name": "box",
+				"Tags": [],
+				"Position": "0 0 3",
+				"Rotation": "1 0 0 0",
+				"Scale": "1 1 1",
+				"Variables": {}
+			},
+			"components": [
+				{
+					"type": "StaticModel",
+					"id": 5,
+					"attributes": {
+						"Model": "Model;Models/Box.mdl",
+						"Material": "Material;Materials/Stone.xml"
+					}
+				}
+			],
+			"children": []
+		},
+		{
+			"id": 5,
+			"attributes": {
+				"Is Enabled": true,
+				"Name": "Light",
+				"Tags": [],
+				"Position": "0 10 0",
+				"Rotation": "1 0 0 0",
+				"Scale": "1 1 1",
+				"Variables": {}
+			},
+			"components": [
+				{
+					"type": "Light",
+					"id": 6,
+					"attributes": {
+						"Range": 25,
+						"Light Shape Texture": "TextureCube;"
+					}
+				}
+			],
+			"children": []
+		}
+	]
+}

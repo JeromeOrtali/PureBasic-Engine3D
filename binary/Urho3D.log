@@ -1,11 +1,13 @@
-[Sun Jun 25 17:36:52 2017] INFO: Opened log file Urho3D.log
-[Sun Jun 25 17:36:52 2017] INFO: Created 3 worker threads
-[Sun Jun 25 17:36:52 2017] INFO: Added resource path C:/Users/Jerome/Desktop/pb3d/PureBasic-Engine3D/binary/Data/
-[Sun Jun 25 17:36:52 2017] INFO: Added resource path C:/Users/Jerome/Desktop/pb3d/PureBasic-Engine3D/binary/CoreData/
-[Sun Jun 25 17:36:52 2017] INFO: Set screen mode 1024x768 windowed
-[Sun Jun 25 17:36:52 2017] INFO: Initialized input
-[Sun Jun 25 17:36:52 2017] INFO: Initialized user interface
-[Sun Jun 25 17:36:52 2017] INFO: Initialized renderer
-[Sun Jun 25 17:36:52 2017] INFO: Set audio mode 44100 Hz stereo interpolated
-[Sun Jun 25 17:36:52 2017] INFO: Initialized engine
-[Sun Jun 25 17:36:52 2017] INFO: Loading scene from test.json
+[Tue Jun 27 11:47:01 2017] INFO: Opened log file Urho3D.log
+[Tue Jun 27 11:47:01 2017] INFO: Created 3 worker threads
+[Tue Jun 27 11:47:01 2017] INFO: Added resource path D:/Programmation/PureBasic3D/trunk/binary/Data/
+[Tue Jun 27 11:47:01 2017] INFO: Added resource path D:/Programmation/PureBasic3D/trunk/binary/CoreData/
+[Tue Jun 27 11:47:02 2017] INFO: Set screen mode 1024x768 windowed
+[Tue Jun 27 11:47:02 2017] INFO: Initialized input
+[Tue Jun 27 11:47:02 2017] INFO: Initialized user interface
+[Tue Jun 27 11:47:02 2017] INFO: Initialized renderer
+[Tue Jun 27 11:47:02 2017] INFO: Set audio mode 44100 Hz stereo interpolated
+[Tue Jun 27 11:47:02 2017] INFO: Initialized engine
+[Tue Jun 27 11:47:02 2017] INFO: Saving scene to test.xml
+[Tue Jun 27 11:47:02 2017] INFO: Saving scene to test.json
+[Tue Jun 27 11:47:02 2017] INFO: Saving scene to test.bin

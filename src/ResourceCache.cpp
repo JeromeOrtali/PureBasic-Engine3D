@@ -35,6 +35,8 @@ PB_FUNCTION(void*) PB_getResource(Resource type, const unsigned short* name) {
 	case Image:
 		return (void*)PB_RESOURCECACHE->GetResource<Urho3D::Image>(Urho3D::String((const wchar_t*)name));
 		break;
+	case Script:
+		return (void*)PB_RESOURCECACHE->GetResource<Urho3D::ScriptFile>(Urho3D::String((const wchar_t*)name));
 	default:
 		break;
 	}
@@ -76,6 +78,9 @@ PB_FUNCTION(int) PB_backgroundLoadResource(Resource type, const unsigned short* 
 		break;
 	case Image:
 		return (int)PB_RESOURCECACHE->BackgroundLoadResource<Urho3D::Image>(Urho3D::String((const wchar_t*)name));
+		break;
+	case Script:
+		return (int)PB_RESOURCECACHE->BackgroundLoadResource<Urho3D::ScriptFile>(Urho3D::String((const wchar_t*)name));
 		break;
 	default:
 		break;

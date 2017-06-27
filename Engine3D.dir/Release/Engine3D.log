@@ -1,0 +1,13 @@
+﻿  Building Custom Rule C:/Users/Jerome/Desktop/pb3d/PureBasic-Engine3D/CMakeLists.txt
+  CMake does not need to re-run because C:/Users/Jerome/Desktop/pb3d/PureBasic-Engine3D/build/CMakeFiles/generate.stamp is up-to-date.
+  Engine3D.cpp
+  Event.cpp
+  Node.cpp
+  Observer.cpp
+  ResourceCache.cpp
+  Scene.cpp
+  Subject.cpp
+  Génération de code en cours...
+c:\users\jerome\desktop\pb3d\purebasic-engine3d\src\node.cpp(34): warning C4715: 'PB_CreateNodeComponent' : les chemins de contrôle ne retournent pas tous une valeur
+     Création de la bibliothèque C:/Users/Jerome/Desktop/pb3d/PureBasic-Engine3D/build/Release/Engine3D.lib et de l'objet C:/Users/Jerome/Desktop/pb3d/PureBasic-Engine3D/build/Release/Engine3D.exp
+  Engine3D.vcxproj -> C:\Users\Jerome\Desktop\pb3d\PureBasic-Engine3D\build\bin\Engine3D.dll

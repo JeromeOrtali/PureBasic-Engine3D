@@ -54,6 +54,8 @@ PB_FUNCTION(int) PB_SaveScene(Urho3D::Scene* scene, const unsigned short* name, 
 
 
 PB_FUNCTION(int) PB_LoadScene(Urho3D::Scene* scene, const unsigned short* name, SceneFormat format) {
+	scene->Clear();
+	
 	Urho3D::File file(PB_ENGINE_CONTEXT, Urho3D::String((const wchar_t*)name), Urho3D::FILE_READ);
 	switch (format)
 	{
@@ -70,4 +72,44 @@ PB_FUNCTION(int) PB_LoadScene(Urho3D::Scene* scene, const unsigned short* name, 
 		return 0;
 		break;
 	}
+}
+
+PB_FUNCTION(int) PB_LoadScene2(Urho3D::Scene* scene, void* resource ,SceneFormat format) {
+	int result = 0;
+	switch (format)
+	{
+	case JSON:
+	{
+		Urho3D::JSONFile* file = (Urho3D::JSONFile*)resource;
+		result = (int)scene->LoadJSON(file->GetRoot());
+		//scene->SetEnabledRecursive(true);
+		//register_script();
+		break;
+	}
+	case XML:
+	{
+		Urho3D::XMLFile* file = (Urho3D::XMLFile*)resource;
+		result = (int)scene->LoadXML(file->GetRoot());
+		//scene->SetEnabledRecursive(true);
+		//register_script();
+		break;
+	}
+	case BINARY:
+	{
+		Urho3D::File* file = (Urho3D::File*)resource;
+		result =  (int)scene->LoadJSON(file);
+		//scene->SetEnabledRecursive(true);
+		//register_script();
+		break;
+	}
+	default:
+		break;
+	}
+
+	return result;
+}
+
+
+PB_FUNCTION(void) PB_UpdateScene(Urho3D::Scene* scene, float timestep) {
+	scene->Update(timestep);
 }

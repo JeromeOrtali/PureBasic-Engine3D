@@ -1,0 +1,281 @@
+{
+	"id": 1,
+	"attributes": {
+		"Name": "",
+		"Time Scale": 1,
+		"Smoothing Constant": 50,
+		"Snap Threshold": 5,
+		"Elapsed Time": 0,
+		"Next Replicated Node ID": 11,
+		"Next Replicated Component ID": 14,
+		"Next Local Node ID": 16912205,
+		"Next Local Component ID": 16912574,
+		"Variables": {},
+		"Variable Names": ""
+	},
+	"components": [
+		{
+			"type": "Octree",
+			"id": 1,
+			"attributes": null
+		},
+		{
+			"type": "DebugRenderer",
+			"id": 2
+		},
+		{
+			"type": "Octree",
+			"id": 12,
+			"attributes": null
+		}
+	],
+	"children": [
+		{
+			"id": 16777217,
+			"attributes": {
+				"Is Enabled": true,
+				"Name": "Terrain",
+				"Tags": [],
+				"Position": "0 0 0",
+				"Rotation": "1 0 0 0",
+				"Scale": "1 1 1",
+				"Variables": {}
+			},
+			"components": [
+				{
+					"type": "Terrain",
+					"id": 16777228,
+					"attributes": {
+						"Height Map": "Image;Textures/heightmap_2048.png",
+						"Material": "Material;Materials/Terrain.xml",
+						"Smooth Height Map": true
+					}
+				}
+			],
+			"children": []
+		},
+		{
+			"id": 16781188,
+			"attributes": {
+				"Is Enabled": true,
+				"Name": "Sun",
+				"Tags": [],
+				"Position": "0 50.0082 0",
+				"Rotation": "0.967849 0.251533 0 0",
+				"Scale": "1 1 1",
+				"Variables": {}
+			},
+			"components": [
+				{
+					"type": "Light",
+					"id": 16781198,
+					"attributes": {
+						"Light Type": "Directional"
+					}
+				}
+			],
+			"children": []
+		},
+		{
+			"id": 16781190,
+			"attributes": {
+				"Is Enabled": true,
+				"Name": "Water",
+				"Tags": [],
+				"Position": "0 15.4617 0",
+				"Rotation": "1 0 0 0",
+				"Scale": "5000 1 5000",
+				"Variables": {}
+			},
+			"components": [
+				{
+					"type": "StaticModel",
+					"id": 16781200,
+					"attributes": {
+						"Model": "Model;Models/Plane.mdl",
+						"Material": "Material;Materials/Water.xml",
+						"Cast Shadows": true,
+						"View Mask": -2147483648
+					}
+				},
+				{
+					"type": "ScriptInstance",
+					"id": 16801109,
+					"attributes": {
+						"Delayed Method Calls": "0",
+						"Script File": "ScriptFile;Scripts/Utilities/WaterReflection.as",
+						"Class Name": "WaterReflection",
+						"reflectionCameraNode": 0,
+						"reflectionCamera": 0,
+						"height": 0.3
+					}
+				}
+			],
+			"children": []
+		},
+		{
+			"id": 16781191,
+			"attributes": {
+				"Is Enabled": true,
+				"Name": "CameraNode",
+				"Tags": [],
+				"Position": "-149.004 18.6797 170.973",
+				"Rotation": "-0.282843 -0.00805353 0.958742 0.0272988",
+				"Scale": "1 1 1",
+				"Variables": {}
+			},
+			"components": [
+				{
+					"type": "Camera",
+					"id": 16781201,
+					"attributes": {
+						"FOV": 90,
+						"Aspect Ratio": 1.77966,
+						"Orthographic Size": 10
+					}
+				}
+			],
+			"children": []
+		},
+		{
+			"id": 16856622,
+			"attributes": {
+				"Is Enabled": true,
+				"Name": "",
+				"Tags": [],
+				"Position": "-193.899 28.4984 -538.453",
+				"Rotation": "1 0 0 0",
+				"Scale": "1 1 1",
+				"Variables": {}
+			},
+			"components": [
+				{
+					"type": "Zone",
+					"id": 16856844,
+					"attributes": {
+						"Bounding Box Min": "-1000 -1000 -1000",
+						"Bounding Box Max": "1000 1000 1000",
+						"Fog Color": "0.6 0.6 0.8 1",
+						"Fog Start": 0,
+						"Fog End": 2000
+					}
+				}
+			],
+			"children": []
+		},
+		{
+			"id": 16864563,
+			"attributes": {
+				"Is Enabled": true,
+				"Name": "",
+				"Tags": [],
+				"Position": "-150.156 18.7674 169.353",
+				"Rotation": "1 0 0 0",
+				"Scale": "1 1 1",
+				"Variables": {}
+			},
+			"components": [
+				{
+					"type": "StaticModel",
+					"id": 16864807,
+					"attributes": {
+						"Model": "Model;Models/Box.mdl",
+						"Material": "Material;"
+					}
+				},
+				{
+					"type": "ScriptInstance",
+					"id": 16872771,
+					"attributes": {
+						"Delayed Method Calls": "0",
+						"Script File": "ScriptFile;Scripts/Utilities/Rotator.as",
+						"Class Name": "Rotator",
+						"rotationSpeed": "0 100 0"
+					}
+				}
+			],
+			"children": [
+				{
+					"id": 16896324,
+					"attributes": {
+						"Is Enabled": true,
+						"Name": "",
+						"Tags": [],
+						"Position": "-0.0203247 1.10728 -0.0526886",
+						"Rotation": "0.937729 0.336273 -0.0726926 -0.0479354",
+						"Scale": "1 1 1",
+						"Variables": {}
+					},
+					"components": [
+						{
+							"type": "Light",
+							"id": 16900640,
+							"attributes": {
+								"Light Type": "Spot",
+								"Range": 100,
+								"Spot FOV": 90,
+								"Cast Shadows": true
+							}
+						}
+					],
+					"children": []
+				}
+			]
+		},
+		{
+			"id": 16900295,
+			"attributes": {
+				"Is Enabled": true,
+				"Name": "",
+				"Tags": [],
+				"Position": "-151.195 15.3385 176.541",
+				"Rotation": "1 0 0 0",
+				"Scale": "1 1 1",
+				"Variables": {}
+			},
+			"components": [
+				{
+					"type": "StaticModel",
+					"id": 16900641,
+					"attributes": {
+						"Model": "Model;Models/Box.mdl",
+						"Material": "Material;"
+					}
+				},
+				{
+					"type": "ScriptInstance",
+					"id": 16908604,
+					"attributes": {
+						"Delayed Method Calls": "0",
+						"Script File": "ScriptFile;Scripts/Utilities/Rotator.as",
+						"Class Name": "Rotator",
+						"rotationSpeed": "0 100 0"
+					}
+				}
+			],
+			"children": []
+		},
+		{
+			"id": 10,
+			"attributes": {
+				"Is Enabled": true,
+				"Name": "Camera",
+				"Tags": [],
+				"Position": "0 0 0",
+				"Rotation": "1 0 0 0",
+				"Scale": "1 1 1",
+				"Variables": {}
+			},
+			"components": [
+				{
+					"type": "Camera",
+					"id": 13,
+					"attributes": {
+						"Far Clip": 2000
+					}
+				}
+			],
+			"children": []
+		}
+	]
+}

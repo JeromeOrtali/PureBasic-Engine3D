@@ -18,6 +18,7 @@ Enumeration
 	#Resource_JSONFile
 	#Resource_Font
 	#Resource_Image
+	#Resource_script
 EndEnumeration
 
 
@@ -136,7 +137,7 @@ IMPORT_FUNCTION(PB_backgroundLoadResource, .l, type.l _ name.s)
 ; ;    
 
 ; IDE Options = PureBasic 5.60 (Windows - x86)
-; CursorPosition = 13
+; CursorPosition = 20
 ; EnableXP
 ; Executable = Test.exe
 ; SubSystem = opengl

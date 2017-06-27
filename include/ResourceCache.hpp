@@ -12,6 +12,9 @@
 #include <Urho3D/Audio/Sound.h>
 #include <Urho3D/Urho2D/TmxFile2D.h>
 #include <Urho3D/UI/Font.h>
+#include <Urho3D/AngelScript/ScriptFile.h>
+#include <Urho3D/AngelScript/Script.h>
+#include <Urho3D/AngelScript/ScriptInstance.h>
 
 extern Urho3D::ResourceCache* PB_RESOURCECACHE;
 
@@ -25,6 +28,7 @@ enum Resource {
 	JSONFile,
 	Font,
 	Image,
+	Script
 };
 
 #ifndef PB_FUNCTION

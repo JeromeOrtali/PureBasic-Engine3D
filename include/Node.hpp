@@ -11,20 +11,25 @@
 #include <Urho3D/Graphics/Light.h>
 #include <Urho3D/Graphics/Model.h>
 #include <Urho3D/Graphics/StaticModel.h>
+#include <Urho3D/Graphics/AnimatedModel.h>
 #include <Urho3D/Graphics/Material.h>
 #include <Urho3D/Graphics/Skybox.h>
-
-
+#include <Urho3D/Graphics/Terrain.h>
+#include <Urho3D/AngelScript/Script.h>
+#include <Urho3D/AngelScript/ScriptInstance.h>
 
 #ifndef PB_FUNCTION
-	#define PB_FUNCTION(T) __declspec(dllexport) T
+#define PB_FUNCTION(T) __declspec(dllexport) T
 #endif 
 
 enum NodeComponent {
 	camera,
 	staticModel,
+	animatedModel,
 	skybox,
-	light
+	light,
+	terrain,
+	scriptInstance
 };
 
 
@@ -38,7 +43,11 @@ extern "C" {
 
 	PB_FUNCTION(void) PB_SetNodePosition(Urho3D::Node* node, float x, float y, float z);
 
+	PB_FUNCTION(void) PB_NodeTranslate(Urho3D::Node* node, float x, float y, float z, int mode);
+
 	PB_FUNCTION(void) PB_SetNodeRotation(Urho3D::Node* node, float x, float y, float z);
+
+	PB_FUNCTION(void) PB_NodeRotate(Urho3D::Node* node, float x, float y, float z, int mode);
 
 }
 
