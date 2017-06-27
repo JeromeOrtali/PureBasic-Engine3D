@@ -4,7 +4,7 @@ Global __SHARED_LIBRARY__
 
 CompilerIf #PB_Compiler_Processor = #PB_Processor_x86
   CompilerIf #PB_Compiler_OS = #PB_OS_Windows
-  __SHARED_LIBRARY__ = OpenLibrary(#PB_Any,"../build/bin/Engine3D.dll")
+  __SHARED_LIBRARY__ = OpenLibrary(#PB_Any,"bin/Engine3D.dll")
   CompilerElseIf #PB_Compiler_OS = #PB_OS_Linux
     MessageRequester("Erreur","ONLY WINDOWS!")
     End 
