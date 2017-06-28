@@ -34,7 +34,7 @@ extern "C" {
 
 	PB_FUNCTION(void) uh3_setLightPerVertex(Urho3D::Light* light, int enable);
 
-	PB_FUNCTION(void) uh3_setLightColor(Urho3D::Light* light, unsigned char red, unsigned char green, unsigned char blue);
+	PB_FUNCTION(void) uh3_setLightColor(Urho3D::Light* light, unsigned int color);
 
 	PB_FUNCTION(void) uh3_setLightSpecularIntensity(Urho3D::Light* light, float specular);
 
@@ -48,7 +48,7 @@ extern "C" {
 
 	PB_FUNCTION(void) uh3_setLightShadowFadeDistance(Urho3D::Light* light, float distance);
 
-	PB_FUNCTION(void) uh3_setLightShadowBias(float constantBias, float slopeScaledBias);
+	PB_FUNCTION(void) uh3_setLightShadowBias(Urho3D::Light* light, float constantBias, float slopeScaledBias);
 
 	PB_FUNCTION(void) uh3_setLightShadowCascade(Urho3D::Light* light, float split1, float split2, float split3, float split4, float fadeStart, float biasAutoAdjust);
 

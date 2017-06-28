@@ -3,10 +3,10 @@
 ;//////////////////////////////////////////////////////////////////////////////
 ;//
 ;//////////////////////////////////////////////////////////////////////////////
-Enumeration
-  #LightDirectional
-	#LightSpot
-	#LightPoint
+Enumeration ; LightType
+  #UH3_DIRECTIONAL
+  #UH3_SPOT
+  #UH3_POINT
 EndEnumeration
 
 ;//////////////////////////////////////////////////////////////////////////////
@@ -16,7 +16,7 @@ EndEnumeration
 IMPORT_FUNCTION(uh3_getLight,.i,*node _ recursive = #False)
 IMPORT_FUNCTION(uh3_setLightType,void,*light _ type.l)
 IMPORT_FUNCTION(uh3_setLightPerVertex,void,*light _ enable.b)
-IMPORT_FUNCTION(uh3_setLightColor,void,*light _ red.a _ green.a _ blue.a)
+IMPORT_FUNCTION(uh3_setLightColor,void,*light _ color.l)
 IMPORT_FUNCTION(uh3_setLightSpecularIntensity,void,*light _ specular.f)
 IMPORT_FUNCTION(uh3_setLightRange,void,*light _  range.f)
 IMPORT_FUNCTION(uh3_setLightFov,void,*light _  fov.f)
@@ -32,5 +32,5 @@ IMPORT_FUNCTION(uh3_setLightRampTexture,void,*light _ *texture)
 IMPORT_FUNCTION(uh3_setLightShapeTexture,void,*light _ *texture)
 
 ; IDE Options = PureBasic 5.60 (Windows - x86)
-; CursorPosition = 21
+; CursorPosition = 5
 ; EnableXP

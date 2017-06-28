@@ -9,8 +9,15 @@ PB_FUNCTION(void) uh3_setLightType(Urho3D::Light* light, LightType type) {
 	light->SetLightType(Urho3D::LightType(type));
 }
 
-PB_FUNCTION(void) uh3_setLightColor(Urho3D::Light* light, unsigned char red, unsigned char green, unsigned char blue) {
-	light->SetColor(Urho3D::Color((float)red / 255, (float)green / 255, (float)blue / 255));
+PB_FUNCTION(void) uh3_setLightPerVertex(Urho3D::Light* light, int enable) {
+	light->SetPerVertex((bool)enable);
+}
+
+PB_FUNCTION(void) uh3_setLightColor(Urho3D::Light* light, unsigned int color) {
+	float r = ((color & 0xFF)) / 255.0f;
+	float g = ((color >> 8) & 0xFF) / 255.0f;
+	float b = ((color >> 16) & 0xFF) / 255.0f;
+	light->SetColor(Urho3D::Color(r,g,b));
 }
 
 PB_FUNCTION(void) uh3_setLightSpecularIntensity(Urho3D::Light* light, float specular) {

@@ -29,8 +29,8 @@ PB_FUNCTION(Urho3D::Component*) uh3_CreateSceneComponent(Urho3D::Scene* scene, S
 	}
 }
 
-PB_FUNCTION(Urho3D::Node*) uh3_CreateNode(Urho3D::Scene* scene, const unsigned short* name) {
-	return scene->CreateChild(Urho3D::String((const wchar_t*)name));
+PB_FUNCTION(Urho3D::Node*) uh3_CreateNode(Urho3D::Scene* scene, const unsigned short* name, NodeType type) {
+	return scene->CreateChild(Urho3D::String((const wchar_t*)name), (Urho3D::CreateMode)type);
 }
 
 PB_FUNCTION(int) uh3_SaveScene(Urho3D::Scene* scene, const unsigned short* name, SceneFormat format) {
@@ -53,7 +53,7 @@ PB_FUNCTION(int) uh3_SaveScene(Urho3D::Scene* scene, const unsigned short* name,
 }
 
 
-PB_FUNCTION(int) uh3_LoadScene(Urho3D::Scene* scene, const unsigned short* name, SceneFormat format) {
+PB_FUNCTION(int) uh3_LoadSceneFromFile(Urho3D::Scene* scene, const unsigned short* name, SceneFormat format) {
 	Urho3D::File file(PB_ENGINE_CONTEXT, Urho3D::String((const wchar_t*)name), Urho3D::FILE_READ);
 	switch (format)
 	{
@@ -72,7 +72,7 @@ PB_FUNCTION(int) uh3_LoadScene(Urho3D::Scene* scene, const unsigned short* name,
 	}
 }
 
-PB_FUNCTION(int) uh3_LoadScene2(Urho3D::Scene* scene, void* resource ,SceneFormat format) {
+PB_FUNCTION(int) uh3_LoadSceneFromResource(Urho3D::Scene* scene, void* resource ,SceneFormat format) {
 	int result = 0;
 	switch (format)
 	{

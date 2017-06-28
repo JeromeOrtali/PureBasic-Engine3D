@@ -32,23 +32,34 @@ Global *cameranode
 
 *scene   = uh3_CreateScene()
 
- uh3_LoadScene(*scene ,"SceneDemo.json",#SceneFormat_json)
+ uh3_LoadSceneFromFile(*scene ,"SceneDemo.json",#UH3_SCENEFORMAT_JSON)
 
-*octree         = uh3_CreateSceneComponent(*scene, #SceneComponent_octree)
-*debugRenderer  = uh3_CreateSceneComponent(*scene, #SceneComponent_debugRenderer)
+*octree         = uh3_CreateSceneComponent(*scene, #UH3_SCENECOMPONENT_OCTREE)
+*debugRenderer  = uh3_CreateSceneComponent(*scene, #UH3_SCENECOMPONENT_DEBUGRENDERER)
 
 *cameraPivot    = uh3_CreateNode(*scene, "CameraPivot")
 
 *cameranode     = uh3_CreateNode(*cameraPivot, "CameraNode")
-*camera         = uh3_CreateNodeComponent(*cameranode,#NodeComponent_camera)
+*camera         = uh3_CreateNodeComponent(*cameranode,#UH3_NODECOMPONENT_CAMERA)
+
+*cameranode2     = uh3_CreateNode(*scene, "CameraNode")
+*camera2         = uh3_CreateNodeComponent(*cameranode2,#UH3_NODECOMPONENT_CAMERA)
+
 
 uh3_SetNodePosition(*cameranode,0,1,-10)
-*viewport   = uh3_CreateViewport(*scene,*cameranode)
+ *viewport   = uh3_CreateViewport(*scene,*cameranode,0)
+ uh3_SetViewportRect(*viewport,0,0,DesktopWidth(0),DesktopHeight(0)/2)
 
+*viewport2   = uh3_CreateViewport(*scene,*cameranode2,1)
+uh3_SetViewportRect(*viewport2,0,DesktopHeight(0)/2,DesktopWidth(0),DesktopHeight(0))
 
-*soldier0 = uh3_GetChildByName(*scene,"Soldier0",#True)
-*soldier1 = uh3_GetChildByName(*scene,"Soldier1",#True)
-*soldier2 = uh3_GetChildByName(*scene,"Soldier2",#True)
+Cam2X.f = 10
+uh3_SetNodeWorldPosition(*cameranode2,0,4,Cam2X)
+uh3_NodeLookAt(*cameranode2,0,0,0)
+
+*soldier0 = uh3_GetNodeChildByName(*scene,"Soldier0",#True)
+*soldier1 = uh3_GetNodeChildByName(*scene,"Soldier1",#True)
+*soldier2 = uh3_GetNodeChildByName(*scene,"Soldier2",#True)
 
 *SoldierAnimatedModel0 = uh3_GetAnimatedModel(*soldier0) ; Retrieve animatedModel
 *SoldierAnimatedModel1 = uh3_GetAnimatedModel(*soldier1)
@@ -88,21 +99,15 @@ EndProcedure
 
 
 
-ProcedureC _Loaded(*ev.Event)
-  Debug "load : " + *ev\backgroundResourceLoaded\name
-EndProcedure
-
-
-uh3_BindEvent(#Event_MouseMove,@_MoveCamera())
-uh3_BindEvent(#Event_MouseWheel,@_ZoomCamera())
-uh3_BindEvent(#Event_BackgroundResourceLoaded,@_Loaded())
+uh3_BindEvent(#UH3_EVENT_MOUSEMOVE,@_MoveCamera())
+uh3_BindEvent(#UH3_EVENT_MOUSEWHEEL,@_ZoomCamera())
 
 
 
 While( uh3_EngineRun() )
   event.Event
   While(uh3_PoolEvent(@event))
-    If event\type = #Event_KeyDown
+    If event\type = #UH3_EVENT_KEYDOWN
       If event\key\key = 27
         uh3_EngineExit()
         Break 2 
@@ -137,8 +142,11 @@ While( uh3_EngineRun() )
     
   Next
   
+  Cam2X = 20 * Cos(ElapsedMilliseconds()/1000)
   
-
+  uh3_SetNodeWorldPosition(*cameranode2,0,4,Cam2X)
+  uh3_NodeLookAt(*cameranode2,0,0,0)
+  
     uh3_EngineRenderFrame()
 
 Wend 
@@ -148,7 +156,7 @@ Wend
 
 ; IDE Options = PureBasic 5.60 (Windows - x86)
 ; ExecutableFormat = Console
-; CursorPosition = 31
-; FirstLine = 30
+; CursorPosition = 148
+; FirstLine = 106
 ; Folding = -
 ; EnableXP

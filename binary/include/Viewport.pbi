@@ -3,13 +3,11 @@
 ;//////////////////////////////////////////////////////////////////////////////
 ;//
 ;//////////////////////////////////////////////////////////////////////////////
-HELP_DESC("")
-HELP_PARAM("")
-HELP_PARAM("")
-IMPORT_FUNCTION(uh3_CreateViewport, .i , *scene _ *camera)
 
-
-IMPORT_FUNCTION(uh3_BackgroundColor,.i ,*viewport _ red.a _ green.a _ blue.a)
+IMPORT_FUNCTION(uh3_CreateViewport, .i , *scene _ *camera _ index.l = 0)
+IMPORT_FUNCTION(uh3_SetViewportBackgroundColor,.i ,*viewport _ color.l)
+IMPORT_FUNCTION(uh3_SetViewportRect,void ,*viewport _ left.l _ top.l _ right.l _ bottom.l) 
+IMPORT_FUNCTION(uh3_SetViewportRenderPathXML,void ,*viewport _ *XMLResource)
 ; IDE Options = PureBasic 5.60 (Windows - x86)
-; CursorPosition = 9
+; CursorPosition = 6
 ; EnableXP

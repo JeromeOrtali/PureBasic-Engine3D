@@ -3,20 +3,20 @@
 ;//
 ;//////////////////////////////////////////////////////////////////////////////
 Enumeration
-	#Event_KeyDown
-	#Event_KeyUp
-	#Event_MouseButtonDown
-	#Event_MousseButtonUp
-	#Event_MouseMove
-	#Event_MouseWheel
-	#Event_BackgroundResourceLoaded
-	#Event_ResourceFileChanged ; inused for now
+  #UH3_EVENT_KEYDOWN
+  #UH3_EVENT_KEYUP
+  #UH3_EVENT_MOUSEBUTTONDOWN
+  #UH3_EVENT_MOUSSEBUTTONUP
+  #UH3_EVENT_MOUSEMOVE
+  #UH3_EVENT_MOUSEWHEEL
+  #UH3_EVENT_BACKGROUNDRESOURCELOADED
+  #UH3_EVENT_RESOURCEFILECHANGED ; inused for now
 EndEnumeration
 
 ;//////////////////////////////////////////////////////////////////////////////
 ;//
 ;//////////////////////////////////////////////////////////////////////////////
-Structure KeyEvent
+Structure uh3_KeyEvent
   key.l
   scancode.l
   buttons.l
@@ -27,7 +27,7 @@ EndStructure
 ;//////////////////////////////////////////////////////////////////////////////
 ;//
 ;//////////////////////////////////////////////////////////////////////////////
-Structure MouseButton
+Structure uh3_MouseButton
   button.l
   buttons.l
   qualifiers.l
@@ -36,7 +36,7 @@ EndStructure
 ;//////////////////////////////////////////////////////////////////////////////
 ;//
 ;//////////////////////////////////////////////////////////////////////////////
-Structure MouseMove
+Structure uh3_MouseMove
   x.l
   y.l
   dx.l
@@ -48,7 +48,7 @@ EndStructure
 ;//////////////////////////////////////////////////////////////////////////////
 ;//
 ;//////////////////////////////////////////////////////////////////////////////
-Structure MouseWheel
+Structure uh3_MouseWheel
   wheel.l
   buttons.l
   qualifiers.l
@@ -57,7 +57,7 @@ EndStructure
 ;//////////////////////////////////////////////////////////////////////////////
 ;//
 ;//////////////////////////////////////////////////////////////////////////////
-Structure BackgroundResourceLoaded
+Structure uh3_BackgroundResourceLoaded
   *name
   success.l
   *resource
@@ -66,7 +66,7 @@ EndStructure
 ;//////////////////////////////////////////////////////////////////////////////
 ;//
 ;//////////////////////////////////////////////////////////////////////////////
-Structure ResourceFileChanged
+Structure uh3_ResourceFileChanged
   *fileName
   *resourceName
 EndStructure
@@ -77,15 +77,14 @@ EndStructure
 Structure Event
   type.l ; see Enumeration
   StructureUnion
-    key.KeyEvent
-    mousebutton.MouseButton
-    mousemove.MouseMove
-    mousewheel.MouseWheel
-    backgroundResourceLoaded.BackgroundResourceLoaded
-    resourceFileChanged.ResourceFileChanged
+    key.uh3_KeyEvent
+    mousebutton.uh3_MouseButton
+    mousemove.uh3_MouseMove
+    mousewheel.uh3_MouseWheel
+    backgroundResourceLoaded.uh3_BackgroundResourceLoaded
+    resourceFileChanged.uh3_ResourceFileChanged
   EndStructureUnion
 EndStructure
 ; IDE Options = PureBasic 5.60 (Windows - x86)
-; CursorPosition = 75
-; FirstLine = 38
+; CursorPosition = 84
 ; EnableXP
