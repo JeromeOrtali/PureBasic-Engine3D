@@ -32,6 +32,7 @@ extern "C" {
 	PB_FUNCTION(int)  uh3_EngineRun();
 	PB_FUNCTION(void) uh3_EngineExit();
 	PB_FUNCTION(void) uh3_EngineRenderFrame();
+	
 }
 
 

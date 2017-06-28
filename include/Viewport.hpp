@@ -9,6 +9,7 @@
 #include <Urho3D/Graphics/Geometry.h>
 #include <Urho3D/Graphics/Renderer.h>
 #include <Urho3D/Graphics/DebugRenderer.h>
+#include <Urho3D/Graphics/RenderPath.h>
 
 #ifndef PB_FUNCTION
 	#define PB_FUNCTION(T) __declspec(dllexport) T
@@ -19,6 +20,7 @@ extern Urho3D::SharedPtr<Urho3D::Engine>	PB_ENGINE;
 
 extern "C" {
 	PB_FUNCTION(Urho3D::Viewport*) uh3_CreateViewport(Urho3D::Scene* scene, Urho3D::Node* camera);
+	PB_FUNCTION(void) uh3_BackgroundColor(Urho3D::Viewport* viewport, unsigned char red, unsigned char green, unsigned char blue);
 }
 
 
