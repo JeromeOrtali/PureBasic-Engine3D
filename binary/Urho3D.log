@@ -1,11 +1,10 @@
-[Wed Jun 28 22:53:25 2017] INFO: Opened log file Urho3D.log
-[Wed Jun 28 22:53:25 2017] INFO: Created 3 worker threads
-[Wed Jun 28 22:53:25 2017] INFO: Added resource path D:/Programmation/PureBasic3D/trunk/binary/Data/
-[Wed Jun 28 22:53:25 2017] INFO: Added resource path D:/Programmation/PureBasic3D/trunk/binary/CoreData/
-[Wed Jun 28 22:53:26 2017] INFO: Set screen mode 1680x1050 windowed
-[Wed Jun 28 22:53:26 2017] INFO: Initialized input
-[Wed Jun 28 22:53:26 2017] INFO: Initialized user interface
-[Wed Jun 28 22:53:26 2017] INFO: Initialized renderer
-[Wed Jun 28 22:53:26 2017] INFO: Set audio mode 44100 Hz stereo interpolated
-[Wed Jun 28 22:53:26 2017] INFO: Initialized engine
-[Wed Jun 28 22:53:26 2017] INFO: Loading scene from SceneDemo.json
+[Fri Jun 30 16:29:41 2017] INFO: Opened log file Urho3D.log
+[Fri Jun 30 16:29:41 2017] INFO: Created 3 worker threads
+[Fri Jun 30 16:29:41 2017] INFO: Added resource path D:/Programmation/PureBasic3D/trunk/binary/Data/
+[Fri Jun 30 16:29:41 2017] INFO: Added resource path D:/Programmation/PureBasic3D/trunk/binary/CoreData/
+[Fri Jun 30 16:29:42 2017] INFO: Set screen mode 1680x1050 windowed
+[Fri Jun 30 16:29:42 2017] INFO: Initialized input
+[Fri Jun 30 16:29:42 2017] INFO: Initialized user interface
+[Fri Jun 30 16:29:42 2017] INFO: Initialized renderer
+[Fri Jun 30 16:29:42 2017] INFO: Set audio mode 44100 Hz stereo interpolated
+[Fri Jun 30 16:29:42 2017] INFO: Initialized engine

@@ -8,6 +8,8 @@ XIncludeFile "Model.pbi"
 XIncludeFile "AnimatedModel.pbi"
 XIncludeFile "Script.pbi"
 XIncludeFile "Light.pbi"
+XIncludeFile "Texture.pbi"
+XIncludeFile "Material.pbi"
 
 ;//////////////////////////////////////////////////////////////////////////////
 ;//
@@ -23,6 +25,7 @@ Enumeration
   #UH3_RESOURCE_FONT
   #UH3_RESOURCE_IMAGE
   #UH3_RESOURCE_SCRIPT
+  #UH3_RESOURCE_TECHNIQUE
 EndEnumeration
 
 ;//////////////////////////////////////////////////////////////////////////////
@@ -37,13 +40,16 @@ IMPORT_FUNCTION(uh3_EngineRenderFrame, void, void)
 IMPORT_FUNCTION(uh3_PoolEvent, void, *event)
 IMPORT_FUNCTION(uh3_BindEvent, void, type.l _ *callback)
 IMPORT_FUNCTION(uh3_UnBindEvent, void, type.l _ *callback)
-IMPORT_FUNCTION(uh3_getResource, .i, type.l _ name.s)
-IMPORT_FUNCTION(uh3_backgroundLoadResource, .l, type.l _ name.s)
+IMPORT_FUNCTION(uh3_GetResource, .i, type.l _ name.s)
+IMPORT_FUNCTION(uh3_GetResourceBackground, .l, type.l _ name.s)
+IMPORT_FUNCTION(uh3_AddManualResource,void, *resource)
+
+
 
 
 
 
 ; IDE Options = PureBasic 5.60 (Windows - x86)
-; CursorPosition = 22
+; CursorPosition = 48
 ; EnableXP
 ; Executable = Test.exe

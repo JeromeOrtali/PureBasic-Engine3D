@@ -65,6 +65,5 @@ EndMacro
 
 ; IDE Options = PureBasic 5.60 (Windows - x86)
 ; CursorPosition = 11
-; FirstLine = 6
 ; Folding = --
 ; EnableXP
