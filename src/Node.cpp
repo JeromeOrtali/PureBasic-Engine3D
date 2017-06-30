@@ -56,7 +56,7 @@ PB_FUNCTION(void*) uh3_CreateNodeComponent(Urho3D::Node* node, NodeComponent com
 		return (void*)node->CreateComponent<Urho3D::ScriptInstance>();
 		break;
 	default:
-		break;
+		return nullptr;
 	}
 }
 

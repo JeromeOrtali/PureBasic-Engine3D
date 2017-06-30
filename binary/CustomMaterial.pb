@@ -48,21 +48,21 @@ RandomData(*RandomPixel,64*64*4)
 
 
 ; 1 CREATE TEXTURE
-*Texture = uh3_CreateTexture2D(512,512)
-uh3_SetTexture2DData(*Texture,0,0,512,512,0, *Pixels_RGBA)
-uh3_SetTextureFilterMode(*Texture,#UH3_FILTER_BILINEAR)
+*Texture0 = uh3_CreateTexture2D(512,512,#UH3_TEXTURE_RGBA, 1 , #UH3_TEXTURE_DYNAMIC)
+uh3_SetTexture2DData(*Texture0,0,0,512,512,0, *Pixels_RGBA)
+uh3_SetTextureFilterMode(*Texture0,#UH3_FILTER_BILINEAR)
 
 ; 2 CREATE MATERIAL
-*Material = uh3_CreateMaterial()
-uh3_SetMaterialTechnique(*Material,0, uh3_GetResource(#UH3_RESOURCE_TECHNIQUE,"Techniques/DiffAlpha.xml"))  
-uh3_SetMaterialTexture(*Material,*Texture,#UH3_TU_DIFFUSE)
-uh3_SetMaterialUVTransform(*Material,0,0,0,1,-1) ; Revert texture ( OpenGL reversed coordinnates )
+*Material0 = uh3_CreateMaterial()
+uh3_SetMaterialTechnique(*Material0,0, uh3_GetResource(#UH3_RESOURCE_TECHNIQUE,"Techniques/DiffAlpha.xml"))  
+uh3_SetMaterialTexture(*Material0,*Texture0,#UH3_TU_DIFFUSE)
+uh3_SetMaterialUVTransform(*Material0,0,0,0,1,-1) ; Revert texture ( OpenGL reversed coordinnates )
 
 ; 3 CREATE MODEL AND ASIGN MATERIAL
 *planeNode = uh3_CreateNode(*scene,"plane")
 *plane      = uh3_CreateNodeComponent(*planeNode,#UH3_NODECOMPONENT_STATICMODEL)
 uh3_SetStaticModel(*plane, uh3_GetResource(#UH3_RESOURCE_MODEL,"Models/Plane.mdl"))
-uh3_SetStaticModelMaterial(*plane,*Material)
+uh3_SetStaticModelMaterial(*plane,*Material0)
 
 
 
@@ -105,10 +105,14 @@ While( uh3_EngineRun() )
   uh3_NodeLookAt(*cameranode,0,0,0)
   
   
+  PokeI(*Pixels_RGBA + ((Random(511)*4) + 512 * (Random(511)*4)),RGBA(0,0,0,0)) 
+  uh3_SetTexture2DData(*Texture0,0,0,512,512,0, *Pixels_RGBA)
+
+  
     uh3_EngineRenderFrame()
 
 Wend 
 ; IDE Options = PureBasic 5.60 (Windows - x86)
-; CursorPosition = 43
-; FirstLine = 36
+; CursorPosition = 50
+; FirstLine = 30
 ; EnableXP

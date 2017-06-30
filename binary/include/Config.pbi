@@ -57,13 +57,14 @@ Macro IMPORT_FUNCTION(name, ret, param)
   If name = #Null 
     Debug "WARNING : " + QUOTE#name#QUOTE + " is nullptr"
   EndIf 
-  
+;   Debug QUOTE#name#ret#QUOTE+"("+QUOTE#param#QUOTE+")"
 EndMacro
 
 
 
 
 ; IDE Options = PureBasic 5.60 (Windows - x86)
-; CursorPosition = 11
+; CursorPosition = 59
+; FirstLine = 16
 ; Folding = --
 ; EnableXP

@@ -23,3 +23,26 @@
 *	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 *	SOFTWARE.
 */
+#ifndef TECHNIQUE_HPP
+#define TECHNIQUE_HPP
+
+#include <Urho3D/Graphics/Graphics.h>
+#include <Urho3D/Graphics/Material.h>
+#include <Urho3D/IO/Serializer.h>
+#include <Urho3D/IO/File.h>
+#include <Urho3D/Resource/XMLFile.h>
+#include <Urho3D/Resource/JSONFile.h>
+
+extern Urho3D::Context*	PB_ENGINE_CONTEXT;
+
+
+#ifndef PB_FUNCTION
+	#define PB_FUNCTION(T) __declspec(dllexport) T
+#endif 
+
+extern "C" {
+	
+}
+
+
+#endif // !TECHNIQUE_HPP

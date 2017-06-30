@@ -31,6 +31,8 @@
 #include <Urho3D/Graphics/DebugRenderer.h>
 #include <Urho3D/Scene/Component.h>
 #include <Urho3D/Graphics/Octree.h>
+#include <Urho3D/Graphics/GraphicsDefs.h>
+#include <Urho3D/Graphics/RenderPath.h>
 #include <Urho3D/Physics/PhysicsWorld.h>
 #include <Urho3D/Urho2D/PhysicsWorld2D.h>
 #include <Urho3D/Scene/SceneEvents.h>

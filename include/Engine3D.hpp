@@ -57,6 +57,16 @@ extern "C" {
 	PB_FUNCTION(int)  uh3_EngineRun();
 	PB_FUNCTION(void) uh3_EngineExit();
 	PB_FUNCTION(void) uh3_EngineRenderFrame();
+	PB_FUNCTION(void) uh3_SetDrawShadow(int enable);
+	PB_FUNCTION(int) uh3_GetDrawShadow();
+	PB_FUNCTION(void) uh3_SetHDRRendering(int enable);
+	PB_FUNCTION(int) uh3_GetHDRRendering();
+	PB_FUNCTION(void) uh3_SetSpecularLighting(int enable);
+	PB_FUNCTION(int) uh3_GetSpecularLighting();
+	PB_FUNCTION(void) uh3_SetShadowMapSize(int size);
+	PB_FUNCTION(int) uh3_GetShadowMapSize();
+	PB_FUNCTION(void) uh3_SetShadowMapQuality(int quality);
+	PB_FUNCTION(int) uh3_GetShadowMapQuality();
 	
 }
 

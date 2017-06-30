@@ -103,3 +103,7 @@ PB_FUNCTION(void) uh3_SetLightRampTexture(Urho3D::Light* light, Urho3D::Texture*
 PB_FUNCTION(void) uh3_SetLightShapeTexture(Urho3D::Light* light, Urho3D::Texture* texture) {
 	light->SetShapeTexture(texture);
 }
+
+PB_FUNCTION(void) uh3_SetLightShadowFocus(Urho3D::Light* light, int focus, int nonUniform, int autoSize, float quantize, float minView) {
+	light->SetShadowFocus(Urho3D::FocusParameters((bool)focus, (bool)nonUniform, (bool)autoSize, quantize, minView));
+}

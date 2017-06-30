@@ -51,7 +51,8 @@ extern "C" {
 	PB_FUNCTION(void) uh3_SetViewportRenderPathXML(Urho3D::Viewport* viewport, Urho3D::XMLFile* resource);
 
 	PB_FUNCTION(void) uh3_SetCameraFov(Urho3D::Camera* camera, float fov);
-
+	PB_FUNCTION(void) uh3_SetCameraNearClip(Urho3D::Camera* camera, float value);
+	PB_FUNCTION(void) uh3_SetCameraFarClip(Urho3D::Camera* camera, float value);
 }
 
 

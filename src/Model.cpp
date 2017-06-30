@@ -37,3 +37,10 @@ PB_FUNCTION(void) uh3_SetStaticModelMaterial(Urho3D::StaticModel* node, Urho3D::
 	node->SetMaterial(material);
 }
 
+PB_FUNCTION(void) uh3_SetStaticModelCastShadow(Urho3D::StaticModel* node, int enable) {
+	node->SetCastShadows((bool)enable);
+}
+
+PB_FUNCTION(int) uh3_GetStaticModelCastShadow(Urho3D::StaticModel* node) {
+	return (int)node->GetCastShadows();
+}

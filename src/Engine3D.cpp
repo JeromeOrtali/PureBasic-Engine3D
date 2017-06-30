@@ -74,6 +74,8 @@ PB_FUNCTION(void) uh3_OpenScreen3D(int width, int height, int fullscreen, const 
 
 	PB_ENGINE->Initialize(*PB_ENGINE_PARAMETERS);
 	PB_ENGINE_CONTEXT->RegisterSubsystem(new Urho3D::Script(PB_ENGINE_CONTEXT));
+
+	PB_ENGINE->GetSubsystem<Urho3D::Renderer>()->SetReuseShadowMaps(false);
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -115,3 +117,42 @@ PB_FUNCTION(void) uh3_EngineRenderFrame() {
 	PB_ENGINE->RunFrame();
 }
 
+PB_FUNCTION(void) uh3_SetDrawShadow(int enable) {
+	PB_ENGINE->GetSubsystem<Urho3D::Renderer>()->SetDrawShadows((int)enable);
+}
+
+PB_FUNCTION(int) uh3_GetDrawShadow() {
+	return (int)PB_ENGINE->GetSubsystem<Urho3D::Renderer>()->GetDrawShadows();
+}
+
+PB_FUNCTION(void) uh3_SetHDRRendering(int enable) {
+	PB_ENGINE->GetSubsystem<Urho3D::Renderer>()->SetHDRRendering((int)enable);
+}
+
+PB_FUNCTION(int) uh3_GetHDRRendering() {
+	return (int)PB_ENGINE->GetSubsystem<Urho3D::Renderer>()->GetHDRRendering();
+}
+
+PB_FUNCTION(void) uh3_SetSpecularLighting(int enable) {
+	PB_ENGINE->GetSubsystem<Urho3D::Renderer>()->SetSpecularLighting((int)enable);
+}
+
+PB_FUNCTION(int) uh3_GetSpecularLighting() {
+	return (int)PB_ENGINE->GetSubsystem<Urho3D::Renderer>()->GetSpecularLighting();
+}
+
+PB_FUNCTION(void) uh3_SetShadowMapSize(int size) {
+	PB_ENGINE->GetSubsystem<Urho3D::Renderer>()->SetShadowMapSize(size);
+}
+
+PB_FUNCTION(int) uh3_GetShadowMapSize() {
+	return (int)PB_ENGINE->GetSubsystem<Urho3D::Renderer>()->GetShadowMapSize();
+}
+
+PB_FUNCTION(void) uh3_SetShadowMapQuality(int quality) {
+	PB_ENGINE->GetSubsystem<Urho3D::Renderer>()->SetShadowQuality((Urho3D::ShadowQuality)quality);
+}
+
+PB_FUNCTION(int) uh3_GetShadowMapQuality() {
+	return (int)PB_ENGINE->GetSubsystem<Urho3D::Renderer>()->GetShadowQuality();
+}

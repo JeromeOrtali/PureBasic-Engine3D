@@ -56,6 +56,9 @@ extern "C" {
 
 	PB_FUNCTION(void) uh3_SetStaticModelMaterial(Urho3D::StaticModel* node, Urho3D::Material* material);
 	
+	PB_FUNCTION(void) uh3_SetStaticModelCastShadow(Urho3D::StaticModel* node, int enable);
+
+	PB_FUNCTION(int) uh3_GetStaticModelCastShadow(Urho3D::StaticModel* node);
 
 }
 

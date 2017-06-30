@@ -89,6 +89,7 @@ extern "C" {
 
 	PB_FUNCTION(void) uh3_SetLightShapeTexture(Urho3D::Light* light, Urho3D::Texture* texture);
 
+	PB_FUNCTION(void) uh3_SetLightShadowFocus(Urho3D::Light* light, int focus, int nonUniform, int autoSize, float quantize, float minView);
 }
 
 #endif // !LIGHT_HPP
