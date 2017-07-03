@@ -15,6 +15,7 @@ uh3_SetDrawShadow(#True)
  
 *scene   = uh3_CreateScene()
 *octree  = uh3_CreateSceneComponent(*scene, #UH3_SCENECOMPONENT_OCTREE)
+*debug   = uh3_CreateSceneComponent(*scene, #UH3_SCENECOMPONENT_DEBUGRENDERER)
 
 *cameraPivot    = uh3_CreateNode(*scene, "Camera")
 *cameranode     = uh3_CreateNode(*cameraPivot, "Camera")
@@ -38,7 +39,7 @@ uh3_SetCameraFov(*cameraRTT,50)
 *light = uh3_CreateNodeComponent(*lightnode,#UH3_NODECOMPONENT_LIGHT)
 ; uh3_setLightRange(*light,15)
 uh3_setLightType(*light,#UH3_DIRECTIONAL)
-uh3_SetLightCastShadow(*light,#True) ; TODO engine parma
+uh3_SetLightCastShadow(*light,#True) 
 uh3_SetNodePosition(*lightnode,-4,2,-4)
 uh3_SetNodeRotation(*lightnode,38,34,0)
 
@@ -81,6 +82,8 @@ uh3_SetStaticModelCastShadow(*plane,#True)
 uh3_SetStaticModelCastShadow(*cube,#True)
 uh3_SetStaticModelCastShadow(*cube2,#True)
 
+
+ 
 
 *planeRTTnode = uh3_CreateNode(*scene,"plane2")
 *planeRTT     = uh3_CreateNodeComponent(*planeRTTnode,#UH3_NODECOMPONENT_STATICMODEL)
@@ -130,16 +133,18 @@ While( uh3_EngineRun() )
       EndIf 
     EndIf 
   Wend
-  
+  uh3_DrawDebugGeometry(#UH3_NODECOMPONENT_STATICMODEL,*cubeNode2,*debug,0)
    uh3_NodeRotate(*cameraRTTPivot,0,0.1,0)
 ;   uh3_NodeLookAt(*cameraRTTPivot,0,0,0)
   
   
     uh3_EngineRenderFrame()
 
-Wend 
+  Wend 
+  
+  Debug "..."
 ; IDE Options = PureBasic 5.60 (Windows - x86)
-; CursorPosition = 48
-; FirstLine = 34
+; CursorPosition = 144
+; FirstLine = 96
 ; Folding = -
 ; EnableXP

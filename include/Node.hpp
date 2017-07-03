@@ -42,7 +42,9 @@
 #include <Urho3D/Graphics/Terrain.h>
 #include <Urho3D/AngelScript/Script.h>
 #include <Urho3D/AngelScript/ScriptInstance.h>
-
+#include <Urho3D/Graphics/AnimatedModel.h>
+#include <Urho3D/Graphics/AnimationController.h>
+#include <Urho3D/Graphics/Zone.h>
 #include "Scene.hpp"
 
 #ifndef PB_FUNCTION
@@ -56,13 +58,17 @@ enum NodeComponent {
 	skybox,
 	light,
 	terrain,
-	scriptInstance
+	scriptInstance,
+	animationController,
+	zone
 };
 
 
 extern "C" {
 
 	PB_FUNCTION(void*) uh3_CreateNodeComponent(Urho3D::Node* node, NodeComponent component);
+
+	PB_FUNCTION(void*) uh3_GetNodeComponent(Urho3D::Node* node, NodeComponent component);
 
 	PB_FUNCTION(Urho3D::Node*) uh3_GetNodeChildByName(Urho3D::Node* node, const unsigned short* name, int recursive);
 

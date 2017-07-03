@@ -55,9 +55,55 @@ PB_FUNCTION(void*) uh3_CreateNodeComponent(Urho3D::Node* node, NodeComponent com
 	case scriptInstance:
 		return (void*)node->CreateComponent<Urho3D::ScriptInstance>();
 		break;
+	case animationController:
+		return (void*)node->CreateComponent<Urho3D::AnimationController>();
+		break;
+	case zone:
+		return (void*)node->CreateComponent<Urho3D::Zone>();
+		break;
 	default:
 		return nullptr;
 	}
+}
+
+///////////////////////////////////////////////////////////////////////////////
+//
+///////////////////////////////////////////////////////////////////////////////
+PB_FUNCTION(void*) uh3_GetNodeComponent(Urho3D::Node* node, NodeComponent component) {
+	switch (component)
+	{
+	case camera:
+		return (void*)node->GetComponent<Urho3D::Camera>();
+		break;
+	case staticModel:
+		(void*)node->GetComponent<Urho3D::StaticModel>();
+		break;
+	case animatedModel:
+		(void*)node->GetComponent<Urho3D::AnimatedModel>();
+		break;
+	case skybox:
+		(void*)node->GetComponent<Urho3D::Skybox>();
+		break;
+	case light:
+		(void*)node->GetComponent<Urho3D::Light>();
+		break;
+	case terrain:
+		(void*)node->GetComponent<Urho3D::Terrain>();
+		break;
+	case scriptInstance:
+		(void*)node->GetComponent<Urho3D::ScriptInstance>();
+		break;
+	case animationController:
+		return (void*)node->GetComponent<Urho3D::AnimationController>();
+		break;
+	case zone:
+		return (void*)node->GetComponent<Urho3D::Zone>();
+		break;
+	default:
+		return nullptr;
+		break;
+	}
+	return nullptr;
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -355,5 +401,8 @@ PB_FUNCTION(void) uh3_SetNodeDeepEnabled(Urho3D::Node* node, int state) {
 }
 
 ///////////////////////////////////////////////////////////////////////////////
-//
+/// TODO QUAT VEC2/3/4 NEED TO BE IMPLEMENTED
 ///////////////////////////////////////////////////////////////////////////////
+PB_FUNCTION(Urho3D::Quaternion*) uh3_GetNodeWorldRotation(Urho3D::Node* node) {
+	return &node->GetWorldRotation();
+}

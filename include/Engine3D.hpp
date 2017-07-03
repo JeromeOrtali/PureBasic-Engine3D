@@ -36,6 +36,21 @@
 #include <Urho3D/AngelScript/ScriptInstance.h>
 #include "Event.hpp"
 #include <Urho3D/IO/Log.h>
+
+
+#include "Node.hpp"
+
+
+#include <Urho3D/Graphics/Graphics.h>
+#include <Urho3D/Graphics/Geometry.h>
+#include <Urho3D/Graphics/DebugRenderer.h>
+#include <Urho3D/Scene/Node.h>
+#include <Urho3D/Graphics/Model.h>
+#include <Urho3D/Graphics/StaticModel.h>
+#include <Urho3D/Graphics/Drawable.h>
+#include <Urho3D/Engine/EngineDefs.h>
+#include <iostream>
+
 Urho3D::SharedPtr<Urho3D::Engine>	PB_ENGINE;
 Urho3D::Context*					PB_ENGINE_CONTEXT;		// do not forget to delete RAW pointer at exit function !!!
 Urho3D::VariantMap*					PB_ENGINE_PARAMETERS;
@@ -67,6 +82,8 @@ extern "C" {
 	PB_FUNCTION(int) uh3_GetShadowMapSize();
 	PB_FUNCTION(void) uh3_SetShadowMapQuality(int quality);
 	PB_FUNCTION(int) uh3_GetShadowMapQuality();
+
+	PB_FUNCTION(void) uh3_DrawDebugGeometry(NodeComponent component, Urho3D::Node* node, Urho3D::DebugRenderer* debug, int depthTest);
 	
 }
 

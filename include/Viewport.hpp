@@ -46,13 +46,10 @@ extern Urho3D::SharedPtr<Urho3D::Engine>	PB_ENGINE;
 
 extern "C" {
 	PB_FUNCTION(Urho3D::Viewport*) uh3_CreateViewport(Urho3D::Scene* scene, Urho3D::Node* camera, int index);
+	PB_FUNCTION(Urho3D::Viewport*) uh3_CreateUnasignedViewport(Urho3D::Scene* scene, Urho3D::Node* camera);
 	PB_FUNCTION(void) uh3_SetViewportBackgroundColor(Urho3D::Viewport* viewport, unsigned int color);
 	PB_FUNCTION(void) uh3_SetViewportRect(Urho3D::Viewport* viewport, int left, int top, int right, int bottom);
 	PB_FUNCTION(void) uh3_SetViewportRenderPathXML(Urho3D::Viewport* viewport, Urho3D::XMLFile* resource);
-
-	PB_FUNCTION(void) uh3_SetCameraFov(Urho3D::Camera* camera, float fov);
-	PB_FUNCTION(void) uh3_SetCameraNearClip(Urho3D::Camera* camera, float value);
-	PB_FUNCTION(void) uh3_SetCameraFarClip(Urho3D::Camera* camera, float value);
 }
 
 

@@ -44,3 +44,11 @@ PB_FUNCTION(void) uh3_SetStaticModelCastShadow(Urho3D::StaticModel* node, int en
 PB_FUNCTION(int) uh3_GetStaticModelCastShadow(Urho3D::StaticModel* node) {
 	return (int)node->GetCastShadows();
 }
+
+PB_FUNCTION(void) uh3_SetStaticModelViewMask(Urho3D::StaticModel* node, unsigned int mask) {
+	node->SetViewMask(mask);
+}
+
+PB_FUNCTION(unsigned int) uh3_GetStaticModelViewMask(Urho3D::StaticModel* node) {
+	return node->GetViewMask();
+}

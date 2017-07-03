@@ -126,3 +126,7 @@ PB_FUNCTION(int) uh3_GetResourceBackground(Resource type, const unsigned short* 
 PB_FUNCTION(void) uh3_AddManualResource(Urho3D::Resource* resource) {
 	PB_RESOURCECACHE->AddManualResource(resource);
 }
+
+PB_FUNCTION(void) uh3_ReloadResource(Urho3D::Resource* resource) {
+	PB_RESOURCECACHE->ReloadResource(resource);
+}

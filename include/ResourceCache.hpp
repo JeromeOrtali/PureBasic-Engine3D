@@ -67,6 +67,8 @@ extern "C" {
 	PB_FUNCTION(int) uh3_GetResourceBackground(Resource type, const unsigned short* name);
 
 	PB_FUNCTION(void) uh3_AddManualResource(Urho3D::Resource* resource);
+
+	PB_FUNCTION(void) uh3_ReloadResource(Urho3D::Resource* resource);
 }
 
 

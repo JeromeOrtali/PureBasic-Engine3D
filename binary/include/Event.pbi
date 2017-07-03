@@ -86,6 +86,7 @@ Structure uh3_Event
 EndStructure
 
 
-Define Event.uh3_Event
 ; IDE Options = PureBasic 5.60 (Windows - x86)
+; CursorPosition = 87
+; FirstLine = 39
 ; EnableXP

@@ -1,11 +1,12 @@
-[Fri Jun 30 23:44:45 2017] INFO: Opened log file Urho3D.log
-[Fri Jun 30 23:44:45 2017] INFO: Created 3 worker threads
-[Fri Jun 30 23:44:45 2017] INFO: Added resource path D:/Programmation/PureBasic3D/trunk/binary/Data/
-[Fri Jun 30 23:44:45 2017] INFO: Added resource path D:/Programmation/PureBasic3D/trunk/binary/CoreData/
-[Fri Jun 30 23:44:46 2017] INFO: Set screen mode 1680x1050 windowed
-[Fri Jun 30 23:44:46 2017] INFO: Initialized input
-[Fri Jun 30 23:44:46 2017] INFO: Initialized user interface
-[Fri Jun 30 23:44:46 2017] INFO: Initialized renderer
-[Fri Jun 30 23:44:46 2017] INFO: Set audio mode 44100 Hz stereo interpolated
-[Fri Jun 30 23:44:46 2017] INFO: Initialized engine
-[Fri Jun 30 23:44:46 2017] INFO: Saving scene to out.xml
+[Mon Jul  3 19:07:47 2017] INFO: Opened log file Urho3D.log
+[Mon Jul  3 19:07:47 2017] INFO: Created 3 worker threads
+[Mon Jul  3 19:07:47 2017] INFO: Added resource path D:/Programmation/PureBasic3D/trunk/binary/Data/
+[Mon Jul  3 19:07:47 2017] INFO: Added resource path D:/Programmation/PureBasic3D/trunk/binary/CoreData/
+[Mon Jul  3 19:07:48 2017] INFO: Set screen mode 1680x1050 windowed monitor 0
+[Mon Jul  3 19:07:48 2017] INFO: Initialized input
+[Mon Jul  3 19:07:48 2017] INFO: Initialized user interface
+[Mon Jul  3 19:07:48 2017] INFO: Initialized renderer
+[Mon Jul  3 19:07:48 2017] INFO: Set audio mode 44100 Hz stereo interpolated
+[Mon Jul  3 19:07:48 2017] INFO: Initialized engine
+[Mon Jul  3 19:08:29 2017] INFO: OpenGL context lost
+[Mon Jul  3 19:08:29 2017] INFO: Set screen mode 1680x1050 fullscreen monitor 0

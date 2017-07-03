@@ -60,6 +60,10 @@ extern "C" {
 
 	PB_FUNCTION(int) uh3_GetStaticModelCastShadow(Urho3D::StaticModel* node);
 
+	PB_FUNCTION(void) uh3_SetStaticModelViewMask(Urho3D::StaticModel* node, unsigned int mask);
+
+	PB_FUNCTION(unsigned int) uh3_GetStaticModelViewMask(Urho3D::StaticModel* node);
+
 }
 
 

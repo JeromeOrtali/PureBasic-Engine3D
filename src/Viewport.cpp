@@ -32,6 +32,10 @@ PB_FUNCTION(Urho3D::Viewport*) uh3_CreateViewport(Urho3D::Scene* scene, Urho3D::
 	return viewport; 
 }
 
+PB_FUNCTION(Urho3D::Viewport*) uh3_CreateUnasignedViewport(Urho3D::Scene* scene, Urho3D::Node* camera) {
+	return new Urho3D::Viewport(PB_ENGINE_CONTEXT, scene, camera->GetComponent<Urho3D::Camera>());
+}
+
 PB_FUNCTION(void) uh3_SetViewportBackgroundColor(Urho3D::Viewport* viewport, unsigned int color) {
 	Urho3D::RenderPath * rp = viewport->GetRenderPath();
 	for (unsigned int i = 0; i < rp->GetNumCommands(); i++)	{
@@ -57,15 +61,3 @@ PB_FUNCTION(void) uh3_SetViewportRenderPathXML(Urho3D::Viewport* viewport, Urho3
 
 
 
-// MOVE TO CAMERA CPP
-PB_FUNCTION(void) uh3_SetCameraFov(Urho3D::Camera* camera, float fov) {
-	camera->SetFov(fov);	
-}
-
-PB_FUNCTION(void) uh3_SetCameraNearClip(Urho3D::Camera* camera, float value) {
-	camera->SetNearClip(value);
-}
-
-PB_FUNCTION(void) uh3_SetCameraFarClip(Urho3D::Camera* camera, float value) {
-	camera->SetFarClip(value);
-}

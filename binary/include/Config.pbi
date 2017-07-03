@@ -9,7 +9,7 @@ Global __UH3__SHARED_LIBRARY__
 ;//////////////////////////////////////////////////////////////////////////////
 CompilerIf #PB_Compiler_Processor = #PB_Processor_x86
   CompilerIf #PB_Compiler_OS = #PB_OS_Windows
-  __UH3__SHARED_LIBRARY__ = OpenLibrary(#PB_Any,"bin/Engine3D.dll")
+  __UH3__SHARED_LIBRARY__ = OpenLibrary(#PB_Any,"./bin/Engine3D.dll")
   CompilerElseIf #PB_Compiler_OS = #PB_OS_Linux
     MessageRequester("Erreur","ONLY WINDOWS!")
     End 
@@ -64,7 +64,6 @@ EndMacro
 
 
 ; IDE Options = PureBasic 5.60 (Windows - x86)
-; CursorPosition = 59
-; FirstLine = 16
+; CursorPosition = 11
 ; Folding = --
 ; EnableXP

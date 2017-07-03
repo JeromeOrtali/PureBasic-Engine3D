@@ -229,17 +229,16 @@
     ///     normal: surface normal
     ///     reflection: vector of reflection off of the surface
     ///     roughness: surface roughness
-    vec3 GetSpecularDominantDir(vec3 normal, vec3 reflection, float roughness)
-    {
-        float smoothness = 1.0 - roughness;
-        float lerpFactor = smoothness * (sqrt(smoothness) + roughness);
-        return mix(normal, reflection, lerpFactor);
-    }
+    // vec3 GetSpecularDominantDir(vec3 normal, vec3 reflection, float roughness)
+    // {
+    //     float smoothness = 1.0 - roughness;
+    //     float lerpFactor = smoothness * (sqrt(smoothness) + roughness);
+    //     return mix(normal, reflection, lerpFactor);
+    // }
 
-    float GetMipFromRougness(float roughness)
+    float GetMipFromRoughness(float roughness)
     {
-        float smoothness = 1.0 - roughness;
-        return (1.0 - smoothness * smoothness) * 10.0;
+        return (roughness * 12.0 - pow(roughness, 6.0) * 1.5);
     }
 
 
@@ -253,6 +252,18 @@
         return SpecularColor * AB.x + AB.y;
     }
 
+    vec3 FixCubeLookup(vec3 v) 
+    {
+        float M = max(max(abs(v.x), abs(v.y)), abs(v.z));
+        float scale = (1024 - 1) / 1024;
+
+        if (abs(v.x) != M) v.x += scale;
+        if (abs(v.y) != M) v.y += scale;
+        if (abs(v.z) != M) v.z += scale; 
+
+        return v;
+    }
+
     /// Calculate IBL contributation
     ///     reflectVec: reflection vector for cube sampling
     ///     wsNormal: surface normal in word space
@@ -261,23 +272,24 @@
     ///     ambientOcclusion: ambient occlusion
     vec3 ImageBasedLighting(vec3 reflectVec, vec3 tangent, vec3 bitangent, vec3 wsNormal, vec3 toCamera, vec3 diffColor, vec3 specColor, float roughness, inout vec3 reflectionCubeColor)
     {
+        roughness = max(roughness, 0.08);
         reflectVec = GetSpecularDominantDir(wsNormal, reflectVec, roughness);
         float ndv = clamp(dot(-toCamera, wsNormal), 0.0, 1.0);
 
         // PMREM Mipmapmode https://seblagarde.wordpress.com/2012/06/10/amd-cubemapgen-for-physically-based-rendering/
         //float GlossScale = 16.0;
         //float GlossBias = 5.0;
-        float mipSelect = roughness * 9.0; //exp2(GlossScale * roughness * roughness + GlossBias) - exp2(GlossBias);
+        float mipSelect = GetMipFromRoughness(roughness); //exp2(GlossScale * roughness * roughness + GlossBias) - exp2(GlossBias);
 
         // OpenGL ES does not support textureLod without extensions and does not have the sZoneCubeMap sampler,
         // so for now, sample without explicit LOD, and from the environment sampler, where the zone texture will be put
         // on mobile hardware
         #ifndef GL_ES
-            vec3 cube = textureLod(sZoneCubeMap, reflectVec, mipSelect).rgb;
-            vec3 cubeD = textureLod(sZoneCubeMap, wsNormal, 9.0).rgb;
+            vec3 cube = textureLod(sZoneCubeMap, FixCubeLookup(reflectVec), mipSelect).rgb;
+            vec3 cubeD = textureLod(sZoneCubeMap, FixCubeLookup(wsNormal), 9.0).rgb;
         #else
-            vec3 cube = textureCube(sEnvCubeMap, reflectVec).rgb;
-            vec3 cubeD = textureCube(sEnvCubeMap, wsNormal).rgb;
+            vec3 cube = textureCube(sEnvCubeMap, FixCubeLookup(reflectVec)).rgb;
+            vec3 cubeD = textureCube(sEnvCubeMap, FixCubeLookup(wsNormal)).rgb;
         #endif
 
         // Fake the HDR texture

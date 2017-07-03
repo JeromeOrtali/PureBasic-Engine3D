@@ -11,11 +11,13 @@ Enumeration ; different component for node
   #UH3_NODECOMPONENT_LIGHT
   #UH3_NODECOMPONENT_TERRAIN
   #UH3_NODECOMPONENT_SCRIPT
+  #UH3_NODECOMPONENT_ANIMATIONCONTROLLER
+  #UH3_NODECOMPONENT_ZONE
+  
   ;...
   ; more will be arrive...
   ;...
 EndEnumeration
-
 
 
 ;//////////////////////////////////////////////////////////////////////////////
@@ -31,6 +33,7 @@ EndEnumeration
 ;//
 ;//////////////////////////////////////////////////////////////////////////////
 IMPORT_FUNCTION(uh3_CreateNodeComponent, .i , *node _ component.l )
+IMPORT_FUNCTION(uh3_GetNodeComponent,.i, *node _ component.l)
 IMPORT_FUNCTION(uh3_GetNodeChildByName, .i, *node _ name.s _ recursive.b = #False)
 IMPORT_FUNCTION(uh3_GetNodeChildByID, .i, *node _ id.l )
 IMPORT_FUNCTION(uh3_SetNodeTemporary, void, state.l)
@@ -75,6 +78,5 @@ IMPORT_FUNCTION(uh3_SetNodeEnabled, void, *node _  state.l) ;without recursion
 IMPORT_FUNCTION(uh3_SetNodeDeepEnabled, void, *node _  state.l) ;with recursion
 
 ; IDE Options = PureBasic 5.60 (Windows - x86)
-; CursorPosition = 44
-; FirstLine = 27
+; CursorPosition = 14
 ; EnableXP

@@ -10,6 +10,10 @@ XIncludeFile "Script.pbi"
 XIncludeFile "Light.pbi"
 XIncludeFile "Texture.pbi"
 XIncludeFile "Material.pbi"
+XIncludeFile "Camera.pbi"
+XIncludeFile "Skybox.pbi"
+XIncludeFile "Zone.pbi"
+XIncludeFile "Terrain.pbi"
 
 ;//////////////////////////////////////////////////////////////////////////////
 ;//
@@ -65,12 +69,10 @@ IMPORT_FUNCTION(uh3_SetShadowMapSize,void,size.l)
 IMPORT_FUNCTION(uh3_SetShadowMapQuality,void,quality.l)
 IMPORT_FUNCTION(uh3_GetShadowMapQuality,.l,void)
 
-
-
+IMPORT_FUNCTION(uh3_DrawDebugGeometry,void,component.l _ *node _ *debugrenderer _ depthTest.l)
 
 
 ; IDE Options = PureBasic 5.60 (Windows - x86)
-; CursorPosition = 67
-; FirstLine = 22
+; CursorPosition = 15
 ; EnableXP
 ; Executable = Test.exe

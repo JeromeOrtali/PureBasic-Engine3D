@@ -43,9 +43,11 @@ PB_FUNCTION(void) uh3_InitEngine3D(int argc, char **argv) {
 	PB_URHOEVENT			= new PB_EventHandler(PB_ENGINE_CONTEXT);
 	PB_EVENT				= new std::queue<Event>;
 	PB_RESOURCECACHE		= PB_ENGINE_CONTEXT->GetSubsystem<Urho3D::ResourceCache>();// Urho3D::GetSubsystem<ResourceCache>();//new Urho3D::ResourceCache(PB_ENGINE_CONTEXT);
-
 	//PB_ENGINE_CONTEXT->RegisterFactory<Urho3D::ScriptInstance>("ScriptInstance");
-	
+
+	Urho3D::VariantMap & map = *PB_ENGINE_PARAMETERS;
+
+
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -72,10 +74,12 @@ PB_FUNCTION(void) uh3_OpenScreen3D(int width, int height, int fullscreen, const 
 		map["WindowResizable"] = false;
 	}
 
-	PB_ENGINE->Initialize(*PB_ENGINE_PARAMETERS);
+	map["ResourcePrefixPaths"] = "./";
+
+	std::cout << PB_ENGINE->Initialize(*PB_ENGINE_PARAMETERS) << std::endl;
 	PB_ENGINE_CONTEXT->RegisterSubsystem(new Urho3D::Script(PB_ENGINE_CONTEXT));
 
-	PB_ENGINE->GetSubsystem<Urho3D::Renderer>()->SetReuseShadowMaps(false);
+	//PB_ENGINE->GetSubsystem<Urho3D::Renderer>()->SetReuseShadowMaps(false);
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -85,8 +89,11 @@ PB_FUNCTION(void) uh3_EmbedScreen(void *window) {
 	Urho3D::VariantMap & map = *PB_ENGINE_PARAMETERS;
 	map["ExternalWindow"] = window;
 	map["LogLevel "] = Urho3D::LOG_DEBUG;
+	map["ResourcePrefixPaths"] = "./";
 	PB_ENGINE->Initialize(*PB_ENGINE_PARAMETERS);
 	PB_ENGINE_CONTEXT->RegisterSubsystem(new Urho3D::Script(PB_ENGINE_CONTEXT));
+
+
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -155,4 +162,31 @@ PB_FUNCTION(void) uh3_SetShadowMapQuality(int quality) {
 
 PB_FUNCTION(int) uh3_GetShadowMapQuality() {
 	return (int)PB_ENGINE->GetSubsystem<Urho3D::Renderer>()->GetShadowQuality();
+}
+
+
+PB_FUNCTION(void) uh3_DrawDebugGeometry(NodeComponent component, Urho3D::Node* node, Urho3D::DebugRenderer* debug, int depthTest ) {
+	switch (component)
+	{
+	case camera:
+		node->GetComponent<Urho3D::Camera>()->DrawDebugGeometry(debug, (bool)depthTest);
+		break;
+	case staticModel:
+		node->GetComponent<Urho3D::StaticModel>()->DrawDebugGeometry(debug, (bool)depthTest);
+		break;
+	case animatedModel:
+		node->GetComponent<Urho3D::AnimatedModel>()->DrawDebugGeometry(debug, (bool)depthTest);
+		break;
+	case skybox:
+		node->GetComponent<Urho3D::Skybox>()->DrawDebugGeometry(debug, (bool)depthTest);
+		break;
+	case light:
+		node->GetComponent<Urho3D::Light>()->DrawDebugGeometry(debug, (bool)depthTest);
+		break;
+	case terrain:
+		node->GetComponent<Urho3D::Terrain>()->DrawDebugGeometry(debug, (bool)depthTest);
+		break;
+	default:
+		break;
+	}
 }
